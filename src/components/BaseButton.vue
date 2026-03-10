@@ -1,9 +1,6 @@
 <script setup>
 defineProps({
-  variant: {
-    type: String,
-    default: "dark",
-  },
+  variant: { type: String, default: "dark" },
 });
 </script>
 
@@ -15,6 +12,7 @@ defineProps({
 
 <style scoped>
 .button {
+  width: fit-content;
   border-radius: 14px;
   padding: 20px 35px;
   font-size: 20px;

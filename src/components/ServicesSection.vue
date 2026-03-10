@@ -1,6 +1,7 @@
 <script setup>
 import AppSection from "./AppSection.vue";
 import ServiceCard from "./ServiceCard.vue";
+import CtaBanner from "./CtaBanner.vue";
 
 const services = [
   {
@@ -54,6 +55,7 @@ const services = [
         />
       </li>
     </ul>
+    <CtaBanner />
   </AppSection>
 </template>
 
