@@ -12,9 +12,9 @@ const navLinks = [
 ];
 
 const socialIcons = [
-  { label: "LinkedIn", href: "#", icon: "icon-linkedin" },
-  { label: "Facebook", href: "#", icon: "icon-facebook" },
-  { label: "Twitter", href: "#", icon: "icon-twitter" },
+  { label: "LinkedIn", href: "#", icon: "/icons/icon-linkedin.svg" },
+  { label: "Facebook", href: "#", icon: "/icons/icon-facebook.svg" },
+  { label: "X (Twitter)", href: "#", icon: "/icons/icon-x.svg" },
 ];
 </script>
 
@@ -61,9 +61,7 @@ const socialIcons = [
                 :aria-label="`Follow us on ${icon.label}`"
                 class="footer__social-link"
               >
-                <svg class="footer__social-icon" aria-hidden="true">
-                  <use :href="`/icons/sprite.svg#${icon.icon}`" />
-                </svg>
+                <img :src="icon.icon" :alt="icon.label" width="30" height="30" aria-hidden="true" />
               </a>
             </li>
           </ul>
@@ -167,11 +165,6 @@ const socialIcons = [
   opacity: 0.8;
 }
 
-.footer__social-icon {
-  width: 30px;
-  height: 30px;
-  fill: #fff;
-}
 
 .footer__middle {
   display: flex;
