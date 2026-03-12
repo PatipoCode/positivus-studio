@@ -23,6 +23,11 @@ defineProps({
   border: 1px solid transparent;
 }
 
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 .button--dark {
   background-color: var(--color-dark);
   color: #fff;
