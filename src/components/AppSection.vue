@@ -4,6 +4,7 @@ import AppContainer from "./AppContainer.vue";
 defineProps({
   title: String,
   description: String,
+  descriptionWidth: String,
 });
 </script>
 
@@ -12,7 +13,7 @@ defineProps({
     <AppContainer>
       <div v-if="title || description" class="section__header">
         <h2 v-if="title" class="section__title">{{ title }}</h2>
-        <p v-if="description" class="section__description">{{ description }}</p>
+        <p v-if="description" class="section__description" :style="descriptionWidth ? { maxWidth: descriptionWidth } : {}">{{ description }}</p>
       </div>
       <slot />
     </AppContainer>
@@ -21,7 +22,7 @@ defineProps({
 
 <style scoped>
 .section {
-  padding: 140px 0;
+  padding: 70px 0;
 }
 
 .section__header {
