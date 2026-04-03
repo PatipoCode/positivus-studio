@@ -1,0 +1,8 @@
+@use "@/styles/index" as *;
+
+:root {
+  --color-accent: #{$color-accent};
+  --color-dark: #{$color-dark};
+  --color-dark-2: #{$color-dark-2};
+  --color-card: #{$color-card};
+}
