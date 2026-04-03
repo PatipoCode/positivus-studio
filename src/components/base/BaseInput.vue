@@ -1,22 +1,32 @@
 <script setup>
-defineProps({
+const props = defineProps({
+  modelValue: { type: String, default: "" },
+  id: String,
+  name: String,
   type: { type: String, default: "text" },
   placeholder: String,
   multiline: { type: Boolean, default: false },
   variant: { type: String, default: "dark" },
 });
 
-const model = defineModel({ default: "" });
+const emit = defineEmits(["update:modelValue"]);
+
+function onInput(e) {
+  emit("update:modelValue", e.target.value);
+}
 </script>
 
 <template>
   <component
     :is="multiline ? 'textarea' : 'input'"
-    v-bind="multiline ? {} : { type }"
-    v-model="model"
+    :type="multiline ? undefined : type"
+    :value="modelValue"
+    :id="id"
+    :name="name || id"
     :placeholder="placeholder"
     class="input"
     :class="[`input--${variant}`, { 'input--textarea': multiline }]"
+    @input="onInput"
   />
 </template>
 
@@ -31,18 +41,18 @@ const model = defineModel({ default: "" });
   transition: border-color 0.2s;
 
   &:focus {
-    border-color: var(--color-accent);
+    border-color: $color-accent;
   }
 
 
   &--dark {
-    border: 1px solid #fff;
+    border: 1px solid $color-white;
     background-color: transparent;
-    color: #fff;
+    color: $color-white;
 
     &:-webkit-autofill {
-      -webkit-box-shadow: 0 0 0 1000px var(--color-dark-2) inset;
-      -webkit-text-fill-color: #fff;
+      -webkit-box-shadow: 0 0 0 1000px $color-dark-2 inset;
+      -webkit-text-fill-color: $color-white;
     }
 
     &::placeholder {
@@ -51,9 +61,9 @@ const model = defineModel({ default: "" });
   }
 
   &--light {
-    border: 1px solid var(--color-dark);
-    background-color: #fff;
-    color: var(--color-dark);
+    border: 1px solid $color-dark;
+    background-color: $color-white;
+    color: $color-dark;
 
     &::placeholder {
       color: rgb(25 26 35 / 0.4);
