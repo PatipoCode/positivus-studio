@@ -4,10 +4,10 @@ Landing page for a digital marketing agency "Positivus".
 
 ## Tech Stack
 
-- Vue 3 (Composition API, `<script setup>`)
-- Vue Router
-- Vite
-- Sass (SCSS)
+![Vue.js](https://img.shields.io/badge/Vue_3-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white)
+![Vue Router](https://img.shields.io/badge/Vue_Router-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+![Sass](https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=sass&logoColor=white)
 
 ## Project Setup
 
