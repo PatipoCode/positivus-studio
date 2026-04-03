@@ -1,27 +1,20 @@
 <script setup>
-import AppHeader from "./components/AppHeader.vue";
-import HeroSection from "./components/HeroSection.vue";
-import ServicesSection from "./components/ServicesSection.vue";
-import CaseSection from "./components/CaseStudiesSection.vue";
-import ProcessSection from "./components/ProcessSection.vue";
-import TeamSection from "./components/TeamSection.vue";
-import TestimonialsSection from "./components/TestimonialsSection.vue";
-import ContactSection from "./components/ContactSection.vue";
-import AppFooter from "./components/AppFooter.vue";
+import AppHeader from "./components/layout/AppHeader.vue";
+import AppFooter from "./components/layout/AppFooter.vue";
+import ScrollToTop from "./components/ui/ScrollToTop.vue";
 </script>
 
 <template>
   <AppHeader />
-
-  <main>
-    <HeroSection />
-    <ServicesSection />
-    <CaseSection />
-    <ProcessSection />
-    <TeamSection />
-    <TestimonialsSection />
-    <ContactSection />
-  </main>
-
+  <div class="app-content">
+    <RouterView />
+  </div>
   <AppFooter />
+  <ScrollToTop />
 </template>
+
+<style scoped>
+.app-content {
+  flex: 1;
+}
+</style>
