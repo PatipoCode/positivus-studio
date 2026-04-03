@@ -1,5 +1,5 @@
 <script setup>
-import AppContainer from "../components/layout/AppContainer.vue";
+import BaseContainer from "../components/layout/BaseContainer.vue";
 import PricingCard from "../components/ui/cards/PricingCard.vue";
 import UnderConstruction from "../components/ui/UnderConstruction.vue";
 
@@ -45,7 +45,7 @@ const plans = [
 
 <template>
   <main>
-    <AppContainer v-if="false">
+    <BaseContainer v-if="false">
       <div class="pricing">
         <div class="pricing__header">
           <h1 class="pricing__title">Designed for business teams like yours</h1>
@@ -65,10 +65,10 @@ const plans = [
           />
         </div>
       </div>
-    </AppContainer>
-    <AppContainer>
+    </BaseContainer>
+    <BaseContainer>
       <UnderConstruction />
-    </AppContainer>
+    </BaseContainer>
   </main>
 </template>
 
@@ -92,7 +92,7 @@ const plans = [
     line-height: 1.6;
     max-width: 600px;
     margin: 0 auto;
-    color: #444;
+    color: $color-text-subtle;
   }
 
   &__grid {

@@ -90,7 +90,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
   @include card-border($radius-lg);
   width: 100%;
   max-height: 90vh;
-  background-color: #fff;
+  background-color: $color-white;
   overflow-y: auto;
 
   @media (max-width: $bp-sm) {
@@ -116,7 +116,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
     background: none;
     border: none;
     cursor: pointer;
-    color: var(--color-dark);
+    color: $color-dark;
     padding: 4px;
     border-radius: 6px;
     transition: opacity 0.2s;

@@ -45,13 +45,13 @@ defineProps({
 
 <style lang="scss" scoped>
 .team-card {
-  border: 1px solid var(--color-dark);
+  border: 1px solid $color-dark;
   border-radius: 45px;
   padding: $card-padding;
   display: flex;
   flex-direction: column;
   gap: 28px;
-  box-shadow: 0px 5px 0px var(--color-dark);
+  box-shadow: 0px 5px 0px $color-dark;
 
   &__top {
     display: flex;
@@ -61,7 +61,7 @@ defineProps({
 
   &__avatar-wrap {
     flex-shrink: 0;
-    filter: drop-shadow(4px 4px 0 var(--color-dark));
+    filter: drop-shadow(4px 4px 0 $color-dark);
   }
 
   &__avatar {
@@ -104,7 +104,7 @@ defineProps({
 
   &__divider {
     border: none;
-    border-top: 1px solid var(--color-dark);
+    border-top: 1px solid $color-dark;
   }
 
   &__description {

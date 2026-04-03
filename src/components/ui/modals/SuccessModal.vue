@@ -60,7 +60,7 @@ defineProps({
 
   &__message {
     font-size: $text-lg;
-    color: #555;
+    color: $color-text-light;
     line-height: 1.5;
   }
 

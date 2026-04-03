@@ -34,7 +34,7 @@ const model = defineModel({ type: String, default: "" });
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-dark);
+    background-color: $color-dark;
     border: none;
     border-radius: 14px;
     padding: 0 24px;

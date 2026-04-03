@@ -1,18 +1,20 @@
 <script setup>
-import AppContainer from "../layout/AppContainer.vue";
+import BaseContainer from "../layout/BaseContainer.vue";
+
+const base = import.meta.env.BASE_URL;
 
 const brands = [
-  { name: "Amazon", src: "/brands/amazon.png" },
-  { name: "Dribbble", src: "/brands/dribbble.png" },
-  { name: "HubSpot", src: "/brands/hubspot.png" },
-  { name: "Notion", src: "/brands/notion.png" },
-  { name: "Netflix", src: "/brands/netflix.png" },
-  { name: "Zoom", src: "/brands/zoom.png" },
+  { name: "Amazon", src: base + "brands/amazon.png" },
+  { name: "Dribbble", src: base + "brands/dribbble.png" },
+  { name: "HubSpot", src: base + "brands/hubspot.png" },
+  { name: "Notion", src: base + "brands/notion.png" },
+  { name: "Netflix", src: base + "brands/netflix.png" },
+  { name: "Zoom", src: base + "brands/zoom.png" },
 ];
 </script>
 
 <template>
-  <AppContainer>
+  <BaseContainer>
     <ul class="brands__list" aria-label="Our clients">
       <li v-for="brand in brands" :key="brand.name" class="brands__item">
         <img
@@ -23,7 +25,7 @@ const brands = [
         />
       </li>
     </ul>
-  </AppContainer>
+  </BaseContainer>
 </template>
 
 <style lang="scss" scoped>

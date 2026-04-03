@@ -2,9 +2,10 @@
 import { ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import BaseButton from "../base/BaseButton.vue";
-import AppContainer from "./AppContainer.vue";
+import BaseContainer from "./BaseContainer.vue";
 import IconBurger from "../icons/IconBurger.vue";
 
+const base = import.meta.env.BASE_URL;
 const route = useRoute();
 const isMenuOpen = ref(false);
 
@@ -28,7 +29,7 @@ watch(isMenuOpen, (val) => {
 
 <template>
   <header class="header">
-    <AppContainer>
+    <BaseContainer>
       <nav class="header__nav" aria-label="Main navigation">
         <RouterLink
           to="/"
@@ -36,7 +37,7 @@ watch(isMenuOpen, (val) => {
           aria-label="Positivus — go to homepage"
         >
           <img
-            src="/icons/logo.svg"
+            :src="base + 'icons/logo.svg'"
             alt="Positivus logo"
             width="220"
             height="36"
@@ -69,7 +70,7 @@ watch(isMenuOpen, (val) => {
           <IconBurger :open="isMenuOpen" />
         </button>
       </nav>
-    </AppContainer>
+    </BaseContainer>
 
     <Transition name="overlay">
       <div
@@ -80,7 +81,7 @@ watch(isMenuOpen, (val) => {
         aria-modal="true"
         aria-label="Navigation menu"
       >
-        <AppContainer class="header__overlay-inner">
+        <BaseContainer class="header__overlay-inner">
           <nav class="header__overlay-nav" aria-label="Mobile navigation">
             <template v-for="link in navLinks" :key="link.label">
               <RouterLink
@@ -102,7 +103,7 @@ watch(isMenuOpen, (val) => {
               >Request a quote</BaseButton
             >
           </a>
-        </AppContainer>
+        </BaseContainer>
       </div>
     </Transition>
   </header>
@@ -110,7 +111,7 @@ watch(isMenuOpen, (val) => {
 
 <style lang="scss" scoped>
 .header {
-  background-color: #fff;
+  background-color: $color-white;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -154,7 +155,7 @@ watch(isMenuOpen, (val) => {
 
     &:hover {
       background-color: $color-dark;
-      color: #fff;
+      color: $color-white;
     }
   }
 
@@ -182,7 +183,7 @@ watch(isMenuOpen, (val) => {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #fff;
+    background-color: $color-white;
     z-index: 101;
     display: flex;
     flex-direction: column;

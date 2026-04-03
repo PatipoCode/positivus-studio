@@ -61,7 +61,7 @@ defineProps({
   &__description {
     font-size: $text-base;
     line-height: 1.5;
-    color: #333;
+    color: $color-text;
   }
 
   &__price {
@@ -79,7 +79,7 @@ defineProps({
 
   &__period {
     font-size: $text-base;
-    color: #555;
+    color: $color-text-light;
   }
 
   &__features {
@@ -96,7 +96,7 @@ defineProps({
 
   &__check {
     font-size: $text-base;
-    color: var(--color-dark);
+    color: $color-dark;
     flex-shrink: 0;
   }
 

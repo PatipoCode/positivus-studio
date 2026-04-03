@@ -48,7 +48,7 @@ defineProps({
 
   &__message {
     font-size: $text-lg;
-    color: #666;
+    color: $color-text-muted;
   }
 }
 </style>

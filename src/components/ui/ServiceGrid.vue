@@ -2,41 +2,43 @@
 import ServiceCard from "./cards/ServiceCard.vue";
 import CtaBanner from "./CtaBanner.vue";
 
+const base = import.meta.env.BASE_URL;
+
 const services = [
   {
     title: "Search engine optimization",
     slug: "seo",
-    image: "/services/image-service-seo.png",
+    image: base + "services/image-service-seo.png",
     variant: "light",
   },
   {
     title: "Pay-per-click advertising",
     slug: "ppc",
-    image: "/services/image-service-ppc.png",
+    image: base + "services/image-service-ppc.png",
     variant: "accent",
   },
   {
     title: "Social Media Marketing",
     slug: "smm",
-    image: "/services/image-service-smm.png",
+    image: base + "services/image-service-smm.png",
     variant: "dark",
   },
   {
     title: "Email Marketing",
     slug: "email-marketing",
-    image: "/services/image-service-email-marketing.png",
+    image: base + "services/image-service-email-marketing.png",
     variant: "light",
   },
   {
     title: "Content Creation",
     slug: "content-creation",
-    image: "/services/image-service-content-creation.png",
+    image: base + "services/image-service-content-creation.png",
     variant: "accent",
   },
   {
     title: "Analytics and Tracking",
     slug: "analytics",
-    image: "/services/image-service-analytics.png",
+    image: base + "services/image-service-analytics.png",
     variant: "dark",
   },
 ];

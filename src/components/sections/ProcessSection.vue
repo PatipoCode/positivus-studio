@@ -1,6 +1,8 @@
 <script setup>
-import AppSection from "../layout/AppSection.vue";
+import BaseSection from "../layout/BaseSection.vue";
 import BaseAccordion from "../base/BaseAccordion.vue";
+
+const base = import.meta.env.BASE_URL;
 
 const steps = [
   {
@@ -43,7 +45,7 @@ const steps = [
 </script>
 
 <template>
-  <AppSection
+  <BaseSection
     title="Our Working Process"
     description="Step-by-Step Guide to Achieving Your Business Goals"
     descriptionWidth="300px"
@@ -57,14 +59,14 @@ const steps = [
         <span class="process__toggle" aria-hidden="true">
           <img
             v-if="isOpen"
-            src="/icons/icon-minus.svg"
+            :src="base + 'icons/icon-minus.svg'"
             alt=""
             width="25.08"
             height="4.5"
           />
           <img
             v-else
-            src="/icons/icon-plus.svg"
+            :src="base + 'icons/icon-plus.svg'"
             alt=""
             width="25.08"
             height="25.08"
@@ -76,7 +78,7 @@ const steps = [
         <p class="process__description">{{ item.description }}</p>
       </template>
     </BaseAccordion>
-  </AppSection>
+  </BaseSection>
 </template>
 
 <style lang="scss" scoped>
@@ -84,15 +86,15 @@ const steps = [
   gap: 30px;
 
   :deep(.accordion__item) {
-    background-color: var(--color-card, #f3f3f3);
-    border: 1px solid var(--color-dark);
+    background-color: $color-card;
+    border: 1px solid $color-dark;
     border-radius: 45px;
     padding: $card-padding;
     transition: background-color 0.2s;
   }
 
   :deep(.accordion__item--open) {
-    background-color: var(--color-accent);
+    background-color: $color-accent;
   }
 
   :deep(.accordion__trigger) {
@@ -103,7 +105,7 @@ const steps = [
   }
 
   :deep(.accordion__item--open) .process__toggle {
-    background-color: #fff;
+    background-color: $color-white;
     margin-bottom: 10px;
   }
 
@@ -129,8 +131,8 @@ const steps = [
     width: 58px;
     height: 58px;
     border-radius: 50%;
-    border: 1px solid var(--color-dark);
-    background-color: var(--color-card, #f3f3f3);
+    border: 1px solid $color-dark;
+    background-color: $color-card;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -144,7 +146,7 @@ const steps = [
 
   &__divider {
     border: none;
-    border-top: 1px solid var(--color-dark);
+    border-top: 1px solid $color-dark;
     margin-bottom: 30px;
   }
 

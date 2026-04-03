@@ -1,14 +1,14 @@
 <script setup>
-import AppSection from "../layout/AppSection.vue";
+import BaseSection from "../layout/BaseSection.vue";
 </script>
 
 <template>
-  <AppSection
+  <BaseSection
     title="Testimonials"
     description="Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services"
     descriptionWidth="465px"
   >
-  </AppSection>
+  </BaseSection>
 </template>
 
 <style scoped></style>

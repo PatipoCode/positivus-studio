@@ -29,8 +29,8 @@ defineProps({
   }
 
   &--dark {
-    background-color: var(--color-dark);
-    color: #fff;
+    background-color: $color-dark;
+    color: $color-white;
 
     &:hover {
       opacity: 0.9;
@@ -39,18 +39,18 @@ defineProps({
 
   &--outline {
     background-color: transparent;
-    border-color: #000;
-    color: #000;
+    border-color: $color-black;
+    color: $color-black;
 
     &:hover {
-      background-color: #000;
-      color: #fff;
+      background-color: $color-black;
+      color: $color-white;
     }
   }
 
   &--accent {
-    background-color: var(--color-accent);
-    color: #000;
+    background-color: $color-accent;
+    color: $color-black;
     font-weight: 500;
 
     &:hover {

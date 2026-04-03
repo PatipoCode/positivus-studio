@@ -66,14 +66,14 @@ const isModalOpen = ref(false);
   &__description {
     font-size: $text-lg;
     line-height: 1.5;
-    color: #fff;
+    color: $color-white;
   }
 
   &__link {
     display: flex;
     align-items: center;
     gap: 15px;
-    color: var(--color-accent);
+    color: $color-accent;
     font-size: $text-xl;
     background: none;
     border: none;

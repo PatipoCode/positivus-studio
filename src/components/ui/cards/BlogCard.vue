@@ -61,7 +61,7 @@ defineProps({
   @include flex-column(16px);
   @include card-border($radius-lg);
   padding: $card-padding;
-  background-color: #fff;
+  background-color: $color-white;
 
   &__meta {
     @include flex-between;
@@ -71,7 +71,7 @@ defineProps({
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background-color: var(--color-accent);
+    background-color: $color-accent;
     padding: 6px 12px;
     border-radius: 8px;
     font-size: $text-sm;
@@ -82,13 +82,13 @@ defineProps({
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: var(--color-dark);
+    background-color: $color-dark;
     flex-shrink: 0;
   }
 
   &__date {
     font-size: $text-sm;
-    color: #555;
+    color: $color-text-light;
   }
 
   &__title {
@@ -100,7 +100,7 @@ defineProps({
   &__description {
     font-size: $text-base;
     line-height: 1.6;
-    color: #333;
+    color: $color-text;
     flex: 1;
   }
 
@@ -132,7 +132,7 @@ defineProps({
     font-size: $text-base;
     font-weight: 600;
     text-decoration: none;
-    color: var(--color-dark);
+    color: $color-dark;
 
     &:hover {
       text-decoration: underline;

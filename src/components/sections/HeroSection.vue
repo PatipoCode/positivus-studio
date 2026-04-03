@@ -1,12 +1,14 @@
 <script setup>
 import BaseButton from "../base/BaseButton.vue";
-import AppContainer from "../layout/AppContainer.vue";
+import BaseContainer from "../layout/BaseContainer.vue";
 import BrandsBar from "../ui/BrandsBar.vue";
+
+const base = import.meta.env.BASE_URL;
 </script>
 
 <template>
   <section class="hero" aria-label="Hero">
-    <AppContainer class="hero__content">
+    <BaseContainer class="hero__content">
       <div class="hero__text">
         <h1 class="hero__title">
           Navigating the digital landscape for success
@@ -19,12 +21,12 @@ import BrandsBar from "../ui/BrandsBar.vue";
         <RouterLink to="/#contact"><BaseButton>Book a consultation</BaseButton></RouterLink>
       </div>
       <img
-        src="/hero-illustration.png"
+        :src="base + 'hero-illustration.png'"
         alt="Digital marketing illustration"
         class="hero__illustration"
         aria-hidden="true"
       />
-    </AppContainer>
+    </BaseContainer>
 
     <BrandsBar />
   </section>
@@ -32,7 +34,7 @@ import BrandsBar from "../ui/BrandsBar.vue";
 
 <style lang="scss" scoped>
 .hero {
-  background-color: #fff;
+  background-color: $color-white;
 
   &__content {
     display: flex;

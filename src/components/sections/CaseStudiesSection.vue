@@ -1,5 +1,5 @@
 <script setup>
-import AppSection from "../layout/AppSection.vue";
+import BaseSection from "../layout/BaseSection.vue";
 import CaseStudyCard from "../ui/cards/CaseStudyCard.vue";
 
 const cases = [
@@ -49,7 +49,7 @@ const cases = [
 </script>
 
 <template>
-  <AppSection
+  <BaseSection
     id="use-cases"
     title="Case Studies"
     description="Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies"
@@ -66,12 +66,12 @@ const cases = [
         :details="caseStudy.details"
       />
     </div>
-  </AppSection>
+  </BaseSection>
 </template>
 
 <style lang="scss" scoped>
 .cases {
-  background-color: var(--color-dark);
+  background-color: $color-dark;
   border-radius: 45px;
   padding: clamp(40px, 5vw, 70px) clamp(28px, 4vw, 60px);
   display: flex;

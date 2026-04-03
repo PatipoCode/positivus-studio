@@ -36,8 +36,8 @@ defineProps({
 <style lang="scss" scoped>
 .card {
   border-radius: 45px;
-  border: 1px solid var(--color-dark);
-  box-shadow: 0 5px 0 0 #191a23;
+  border: 1px solid $color-dark;
+  box-shadow: 0 5px 0 0 $color-dark;
   padding: $card-padding;
   display: flex;
   justify-content: space-between;
@@ -52,23 +52,23 @@ defineProps({
   }
 
   &--light {
-    background-color: var(--color-card);
+    background-color: $color-card;
   }
 
   &--accent {
-    background-color: var(--color-accent);
+    background-color: $color-accent;
 
     .card__title-text {
-      background-color: #fff;
+      background-color: $color-white;
     }
   }
 
   &--dark {
-    background-color: var(--color-dark);
-    color: #fff;
+    background-color: $color-dark;
+    color: $color-white;
 
     .card__title-text {
-      background-color: var(--color-accent);
+      background-color: $color-accent;
     }
   }
 
@@ -82,7 +82,7 @@ defineProps({
   }
 
   &__title-text {
-    background-color: var(--color-accent);
+    background-color: $color-accent;
     display: inline;
     padding: 5px 7px;
     border-radius: 7px;

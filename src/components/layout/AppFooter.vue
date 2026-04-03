@@ -2,14 +2,14 @@
 import { ref } from "vue";
 import BaseButton from "../base/BaseButton.vue";
 import BaseInput from "../base/BaseInput.vue";
-import AppContainer from "./AppContainer.vue";
+import BaseContainer from "./BaseContainer.vue";
 import SuccessModal from "../ui/modals/SuccessModal.vue";
 
+const base = import.meta.env.BASE_URL;
 const subscribeEmail = ref("");
 const isSuccessOpen = ref(false);
 
 function subscribe() {
-  if (!subscribeEmail.value) return;
   isSuccessOpen.value = true;
   subscribeEmail.value = "";
 }
@@ -23,15 +23,15 @@ const navLinks = [
 ];
 
 const socialIcons = [
-  { label: "LinkedIn", href: "#", icon: "/icons/icon-linkedin.svg" },
-  { label: "Facebook", href: "#", icon: "/icons/icon-facebook.svg" },
-  { label: "X (Twitter)", href: "#", icon: "/icons/icon-x.svg" },
+  { label: "LinkedIn", href: "#", icon: base + "icons/icon-linkedin.svg" },
+  { label: "Facebook", href: "#", icon: base + "icons/icon-facebook.svg" },
+  { label: "X (Twitter)", href: "#", icon: base + "icons/icon-x.svg" },
 ];
 </script>
 
 <template>
   <footer class="footer" aria-label="Site footer">
-    <AppContainer>
+    <BaseContainer>
       <div class="footer__inner">
         <div class="footer__top">
           <a
@@ -40,7 +40,7 @@ const socialIcons = [
             aria-label="Positivus — go to homepage"
           >
             <img
-              src="/icons/logo.svg"
+              :src="base + 'icons/logo.svg'"
               alt="Positivus logo"
               width="180"
               height="29"
@@ -126,7 +126,7 @@ const socialIcons = [
           </div>
         </div>
       </div>
-    </AppContainer>
+    </BaseContainer>
   </footer>
   <SuccessModal
     v-model="isSuccessOpen"
@@ -137,7 +137,7 @@ const socialIcons = [
 
 <style lang="scss" scoped>
 .footer {
-  color: #fff;
+  color: $color-white;
 
   &__inner {
     padding: 55px;
@@ -145,7 +145,7 @@ const socialIcons = [
     display: flex;
     flex-direction: column;
     gap: 50px;
-    background-color: var(--color-dark);
+    background-color: $color-dark;
     border-radius: 45px 45px 0 0;
 
     @media (max-width: $bp-xl) {
@@ -201,7 +201,7 @@ const socialIcons = [
     transition: background-color 0.2s, color 0.2s;
 
     &:hover {
-      background-color: #fff;
+      background-color: $color-white;
       color: $color-dark;
       text-decoration: none;
     }
@@ -247,8 +247,8 @@ const socialIcons = [
   &__contact-title {
     display: inline-block;
     width: fit-content;
-    background-color: var(--color-accent);
-    color: #000;
+    background-color: $color-accent;
+    color: $color-black;
     font-size: $text-xl;
     font-style: normal;
     font-weight: 500;
@@ -268,7 +268,7 @@ const socialIcons = [
   }
 
   &__subscribe {
-    background-color: var(--color-dark-2);
+    background-color: $color-dark-2;
     border-radius: 14px;
     padding: 58px 40px;
     display: flex;
@@ -295,7 +295,7 @@ const socialIcons = [
   }
 
   &__divider {
-    border-color: #fff;
+    border-color: $color-white;
   }
 
   &__copyright {
@@ -316,7 +316,7 @@ const socialIcons = [
     transition: color 0.2s;
 
     &:hover {
-      color: var(--color-accent);
+      color: $color-accent;
     }
   }
 }

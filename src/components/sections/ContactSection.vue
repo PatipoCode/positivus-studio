@@ -1,12 +1,13 @@
 <script setup>
 import { ref } from "vue";
-import AppSection from "../layout/AppSection.vue";
+import BaseSection from "../layout/BaseSection.vue";
 import BaseButton from "../base/BaseButton.vue";
 import BaseInput from "../base/BaseInput.vue";
 import BaseFormField from "../base/BaseFormField.vue";
 import BaseRadioGroup from "../base/BaseRadioGroup.vue";
 import SuccessModal from "../ui/modals/SuccessModal.vue";
 
+const base = import.meta.env.BASE_URL;
 const radioValue = ref("say-hi");
 
 const form = ref({
@@ -25,7 +26,7 @@ function submit() {
 </script>
 
 <template>
-  <AppSection
+  <BaseSection
     id="contact"
     title="Contact Us"
     description="Connect with Us: Let's Discuss Your Digital Marketing Needs"
@@ -77,20 +78,20 @@ function submit() {
 
         <div class="contact__illustration" aria-hidden="true">
           <img
-            src="/contact-Illustration.png"
+            :src="base + 'contact-Illustration.png'"
             alt="Contact form illustration"
           />
         </div>
       </div>
     </div>
-  </AppSection>
+  </BaseSection>
   <SuccessModal v-model="isSuccessOpen" />
 </template>
 
 <style lang="scss" scoped>
 .contact {
   &__inner {
-    background-color: var(--color-card, #f3f3f3);
+    background-color: $color-card;
     border-radius: 45px;
     padding: $form-padding;
     display: flex;

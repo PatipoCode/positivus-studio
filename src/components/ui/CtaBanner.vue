@@ -1,5 +1,7 @@
 <script setup>
 import BaseButton from "../base/BaseButton.vue";
+
+const base = import.meta.env.BASE_URL;
 </script>
 
 <template>
@@ -15,7 +17,7 @@ import BaseButton from "../base/BaseButton.vue";
       >
     </div>
     <img
-      src="/cta-Illustration.png"
+      :src="base + 'icons/cta-Illustration.svg'"
       alt=""
       class="cta__image"
       aria-hidden="true"
@@ -26,7 +28,7 @@ import BaseButton from "../base/BaseButton.vue";
 <style lang="scss" scoped>
 .cta {
   height: 347px;
-  background-color: var(--color-card);
+  background-color: $color-card;
   border-radius: 45px;
   padding: $card-padding;
   display: flex;

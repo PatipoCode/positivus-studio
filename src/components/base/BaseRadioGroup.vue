@@ -43,8 +43,8 @@ const model = defineModel();
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    border: 1px solid var(--color-dark);
-    background-color: #fff;
+    border: 1px solid $color-dark;
+    background-color: $color-white;
     cursor: pointer;
     position: relative;
     flex-shrink: 0;
@@ -58,7 +58,7 @@ const model = defineModel();
       width: 14px;
       height: 14px;
       border-radius: 50%;
-      background-color: var(--color-accent);
+      background-color: $color-accent;
     }
   }
 

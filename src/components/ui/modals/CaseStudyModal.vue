@@ -98,13 +98,13 @@ const model = defineModel({ type: Boolean });
 
   &__metric-label {
     font-size: $text-sm;
-    color: #666;
+    color: $color-text-muted;
   }
 
   &__text {
     font-size: $text-base;
     line-height: 1.7;
-    color: #444;
+    color: $color-text-subtle;
   }
 }
 </style>

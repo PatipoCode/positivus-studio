@@ -1,14 +1,14 @@
 <script setup>
-import AppSection from "../layout/AppSection.vue";
+import BaseSection from "../layout/BaseSection.vue";
 import TeamGrid from "../ui/TeamGrid.vue";
 </script>
 
 <template>
-  <AppSection
+  <BaseSection
     title="Team"
     description="Meet the skilled and experienced team behind our successful digital marketing strategies"
     descriptionWidth="440px"
   >
     <TeamGrid />
-  </AppSection>
+  </BaseSection>
 </template>
