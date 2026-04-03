@@ -16,8 +16,8 @@ function subscribe() {
 
 const navLinks = [
   { label: "About us", to: "/about" },
-  { label: "Services", href: "/#services" },
-  { label: "Use Cases", href: "/#use-cases" },
+  { label: "Services", to: { path: "/", hash: "#services" } },
+  { label: "Use Cases", to: { path: "/", hash: "#use-cases" } },
   { label: "Pricing", to: "/pricing" },
   { label: "Blog", to: "/blog" },
 ];
@@ -55,11 +55,9 @@ const socialIcons = [
                 class="footer__nav-item"
               >
                 <RouterLink
-                  v-if="link.to"
                   :to="link.to"
                   class="footer__nav-link"
                 >{{ link.label }}</RouterLink>
-                <a v-else :href="link.href" class="footer__nav-link">{{ link.label }}</a>
               </li>
             </ul>
           </nav>

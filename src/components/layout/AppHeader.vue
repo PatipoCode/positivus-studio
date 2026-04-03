@@ -11,8 +11,8 @@ const isMenuOpen = ref(false);
 
 const navLinks = [
   { label: "About us", to: "/about" },
-  { label: "Services", href: "/#services" },
-  { label: "Use Cases", href: "/#use-cases" },
+  { label: "Services", to: { path: "/", hash: "#services" } },
+  { label: "Use Cases", to: { path: "/", hash: "#use-cases" } },
   { label: "Pricing", to: "/pricing" },
   { label: "Blog", to: "/blog" },
 ];
@@ -45,18 +45,16 @@ watch(isMenuOpen, (val) => {
         </RouterLink>
 
         <div class="header__links">
-          <template v-for="link in navLinks" :key="link.label">
-            <RouterLink
-              v-if="link.to"
-              :to="link.to"
-              class="header__link"
-              :aria-current="route.path === link.to ? 'page' : undefined"
-            >{{ link.label }}</RouterLink>
-            <a v-else :href="link.href" class="header__link">{{ link.label }}</a>
-          </template>
-          <a href="#contact">
+          <RouterLink
+            v-for="link in navLinks"
+            :key="link.label"
+            :to="link.to"
+            class="header__link"
+            :aria-current="route.path === link.to ? 'page' : undefined"
+          >{{ link.label }}</RouterLink>
+          <RouterLink to="/#contact">
             <BaseButton variant="outline">Request a quote</BaseButton>
-          </a>
+          </RouterLink>
         </div>
 
         <button
@@ -83,26 +81,19 @@ watch(isMenuOpen, (val) => {
       >
         <BaseContainer class="header__overlay-inner">
           <nav class="header__overlay-nav" aria-label="Mobile navigation">
-            <template v-for="link in navLinks" :key="link.label">
-              <RouterLink
-                v-if="link.to"
-                :to="link.to"
-                class="header__overlay-link"
-                @click="closeMenu"
-              >{{ link.label }}</RouterLink>
-              <a
-                v-else
-                :href="link.href"
-                class="header__overlay-link"
-                @click="closeMenu"
-              >{{ link.label }}</a>
-            </template>
+            <RouterLink
+              v-for="link in navLinks"
+              :key="link.label"
+              :to="link.to"
+              class="header__overlay-link"
+              @click="closeMenu"
+            >{{ link.label }}</RouterLink>
           </nav>
-          <a href="#contact" @click="closeMenu">
+          <RouterLink to="/#contact" @click="closeMenu">
             <BaseButton variant="dark" class="header__overlay-cta"
               >Request a quote</BaseButton
             >
-          </a>
+          </RouterLink>
         </BaseContainer>
       </div>
     </Transition>
