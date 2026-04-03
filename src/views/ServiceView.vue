@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from "vue";
 import { useRoute } from "vue-router";
-import AppContainer from "../components/layout/AppContainer.vue";
+import BaseContainer from "../components/layout/BaseContainer.vue";
 import UnderConstruction from "../components/ui/UnderConstruction.vue";
 
 const route = useRoute();
@@ -38,7 +38,7 @@ const service = computed(() => services[route.params.slug]);
 
 <template>
   <main v-if="service" class="service">
-    <AppContainer>
+    <BaseContainer>
       <div class="service__header">
         <h1 class="service__title">{{ service.title }}</h1>
       </div>
@@ -46,7 +46,7 @@ const service = computed(() => services[route.params.slug]);
         :title="`${service.title}`"
         message="Full service page is coming soon. Stay tuned!"
       />
-    </AppContainer>
+    </BaseContainer>
   </main>
 </template>
 

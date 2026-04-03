@@ -1,5 +1,5 @@
 <script setup>
-import AppContainer from "./AppContainer.vue";
+import BaseContainer from "./BaseContainer.vue";
 
 defineProps({
   id: String,
@@ -11,7 +11,7 @@ defineProps({
 
 <template>
   <section :id="id" class="section">
-    <AppContainer>
+    <BaseContainer>
       <div v-if="title || description" class="section__header">
         <h2 v-if="title" class="section__title">{{ title }}</h2>
         <p
@@ -23,7 +23,7 @@ defineProps({
         </p>
       </div>
       <slot />
-    </AppContainer>
+    </BaseContainer>
   </section>
 </template>
 
@@ -46,7 +46,7 @@ defineProps({
   &__title {
     font-size: $text-3xl;
     font-weight: 500;
-    background-color: var(--color-accent);
+    background-color: $color-accent;
     padding: 0 7px;
     border-radius: 7px;
     white-space: nowrap;

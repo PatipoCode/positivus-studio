@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import AppContainer from "../components/layout/AppContainer.vue";
+import BaseContainer from "../components/layout/BaseContainer.vue";
 import UnderConstruction from "../components/ui/UnderConstruction.vue";
 import BlogSearch from "../components/ui/BlogSearch.vue";
 import BlogCard from "../components/ui/cards/BlogCard.vue";
@@ -73,7 +73,7 @@ const posts = [
 
 <template>
   <main>
-    <AppContainer v-if="false">
+    <BaseContainer v-if="false">
       <div class="blog-header">
         <h1 class="blog-header__title">Our Blog</h1>
         <p class="blog-header__description">
@@ -95,10 +95,10 @@ const posts = [
           :href="post.href"
         />
       </div>
-    </AppContainer>
-    <AppContainer>
+    </BaseContainer>
+    <BaseContainer>
       <UnderConstruction />
-    </AppContainer>
+    </BaseContainer>
   </main>
 </template>
 

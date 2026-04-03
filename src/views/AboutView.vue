@@ -1,7 +1,7 @@
 <script setup>
 import BaseButton from "../components/base/BaseButton.vue";
 import BrandsBar from "../components/ui/BrandsBar.vue";
-import AppSection from "../components/layout/AppSection.vue";
+import BaseSection from "../components/layout/BaseSection.vue";
 import ServiceGrid from "../components/ui/ServiceGrid.vue";
 </script>
 
@@ -18,12 +18,12 @@ import ServiceGrid from "../components/ui/ServiceGrid.vue";
     >
   </main>
   <BrandsBar />
-  <AppSection
+  <BaseSection
     title="Services"
     description="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
   >
     <ServiceGrid />
-  </AppSection>
+  </BaseSection>
 </template>
 
 <style lang="scss" scoped>
