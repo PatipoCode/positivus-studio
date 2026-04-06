@@ -69,4 +69,4 @@ src/
 
 ## Design
 
-Based on [Figma mockup](https://www.figma.com/design/GK7zPJQPEKQKmDYlWAElvW/Positivus-Landing-Page-Design--Community-).
+Based on [Figma mockup](https://www.figma.com/design/2rN28iX9YPlQTxhbq5LOua/Positivus-Landing-Page-Premium--Preview-?node-id=1037-667&p=f&t=UdxqLV097l9WeqJ6-0).
