@@ -13,7 +13,9 @@
     "vite": "^7.3.1"
   },
   "dependencies": {
+    "@vee-validate/rules": "^4.15.1",
     "@vitejs/plugin-vue": "^6.0.4",
+    "vee-validate": "^4.15.1",
     "vue": "^3.5.30",
     "vue-router": "^4.6.4"
   }

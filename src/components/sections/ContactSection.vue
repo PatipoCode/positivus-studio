@@ -3,24 +3,18 @@ import { ref } from "vue";
 import BaseSection from "../layout/BaseSection.vue";
 import BaseButton from "../base/BaseButton.vue";
 import BaseInput from "../base/BaseInput.vue";
-import BaseFormField from "../base/BaseFormField.vue";
+import FormField from "../base/FormField.vue";
 import BaseRadioGroup from "../base/BaseRadioGroup.vue";
 import SuccessModal from "../ui/modals/SuccessModal.vue";
+import { Form } from "vee-validate";
 
 const base = import.meta.env.BASE_URL;
 const radioValue = ref("say-hi");
-
-const form = ref({
-  name: "",
-  email: "",
-  message: "",
-});
-
 const isSuccessOpen = ref(false);
 
-function submit() {
+function submit(_values, { resetForm }) {
   isSuccessOpen.value = true;
-  form.value = { name: "", email: "", message: "" };
+  resetForm();
   radioValue.value = "say-hi";
 }
 </script>
@@ -34,7 +28,7 @@ function submit() {
   >
     <div class="contact">
       <div class="contact__inner">
-        <form class="contact__form" @submit.prevent="submit">
+        <Form class="contact__form" @submit="submit" v-slot="{ meta }">
           <BaseRadioGroup
             v-model="radioValue"
             name="contact-type"
@@ -45,36 +39,46 @@ function submit() {
           />
 
           <div class="contact__fields">
-            <BaseFormField label="Name" html-for="contact-name">
-              <BaseInput
-                id="contact-name"
-                placeholder="Name"
-                variant="light"
-                v-model="form.name"
-              />
-            </BaseFormField>
-            <BaseFormField label="Email*" html-for="contact-email">
-              <BaseInput
-                id="contact-email"
-                type="email"
-                placeholder="example@email.com"
-                variant="light"
-                v-model="form.email"
-              />
-            </BaseFormField>
-            <BaseFormField label="Message*" html-for="contact-message">
-              <BaseInput
-                id="contact-message"
-                placeholder="Message..."
-                variant="light"
-                v-model="form.message"
-                multiline
-              />
-            </BaseFormField>
+            <FormField name="name" label="Name">
+              <template #default="{ field }">
+                <BaseInput
+                  v-bind="field"
+                  placeholder="John Smith"
+                  variant="light"
+                />
+              </template>
+            </FormField>
+
+            <FormField name="email" label="Email" rules="required|email" required>
+              <template #default="{ field, hasError }">
+                <BaseInput
+                  v-bind="field"
+                  placeholder="example@email.com"
+                  variant="light"
+                  :error="hasError"
+                />
+              </template>
+            </FormField>
+
+            <FormField name="message" label="Message" rules="required" required>
+              <template #default="{ field, value, hasError }">
+                <div class="contact__message-wrap">
+                  <BaseInput
+                    v-bind="field"
+                    placeholder="Message ....."
+                    variant="light"
+                    multiline
+                    maxlength="500"
+                    :error="hasError"
+                  />
+                  <span class="contact__counter">{{ (value || '').length }}/500</span>
+                </div>
+              </template>
+            </FormField>
           </div>
 
-          <BaseButton variant="dark" type="submit">Send Message</BaseButton>
-        </form>
+          <BaseButton variant="dark" type="submit" :disabled="!meta.valid">Send Message</BaseButton>
+        </Form>
 
         <div class="contact__illustration" aria-hidden="true">
           <img
@@ -119,6 +123,18 @@ function submit() {
     display: flex;
     flex-direction: column;
     gap: 25px;
+  }
+
+  &__message-wrap {
+    position: relative;
+  }
+
+  &__counter {
+    position: absolute;
+    top: -23px;
+    right: 12px;
+    font-size: $text-sm;
+    color: $color-text-muted;
   }
 
   &__illustration {

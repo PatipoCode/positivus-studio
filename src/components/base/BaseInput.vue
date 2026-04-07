@@ -7,6 +7,7 @@ const props = defineProps({
   placeholder: String,
   multiline: { type: Boolean, default: false },
   variant: { type: String, default: "dark" },
+  error: { type: Boolean, default: false },
 });
 
 const emit = defineEmits(["update:modelValue"]);
@@ -25,7 +26,7 @@ function onInput(e) {
     :name="name || id"
     :placeholder="placeholder"
     class="input"
-    :class="[`input--${variant}`, { 'input--textarea': multiline }]"
+    :class="[`input--${variant}`, { 'input--textarea': multiline, 'input--error': error }]"
     @input="onInput"
   />
 </template>
@@ -43,7 +44,6 @@ function onInput(e) {
   &:focus {
     border-color: $color-accent;
   }
-
 
   &--dark {
     border: 1px solid $color-white;
@@ -76,6 +76,10 @@ function onInput(e) {
     max-height: 400px;
     padding-top: 18px;
     line-height: 1.5;
+  }
+
+  &--error#{&}--error {
+    border-color: $color-error;
   }
 }
 </style>
