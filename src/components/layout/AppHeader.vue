@@ -1,15 +1,16 @@
-<script setup>
+<script setup lang="ts">
 import { ref, watch } from "vue";
 import { useRoute } from "vue-router";
-import BaseButton from "../base/BaseButton.vue";
-import BaseContainer from "./BaseContainer.vue";
-import IconBurger from "../icons/IconBurger.vue";
+import BaseButton from "@/components/base/BaseButton.vue";
+import BaseContainer from "@/components/layout/BaseContainer.vue";
+import IconBurger from "@/components/icons/IconBurger.vue";
+import type { NavLink } from "@/types/index";
 
 const base = import.meta.env.BASE_URL;
 const route = useRoute();
 const isMenuOpen = ref(false);
 
-const navLinks = [
+const navLinks: NavLink[] = [
   { label: "About us", to: "/about" },
   { label: "Services", to: { path: "/", hash: "#services" } },
   { label: "Use Cases", to: { path: "/", hash: "#use-cases" } },

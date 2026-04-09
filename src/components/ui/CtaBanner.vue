@@ -1,5 +1,5 @@
-<script setup>
-import BaseButton from "../base/BaseButton.vue";
+<script setup lang="ts">
+import BaseButton from "@/components/base/BaseButton.vue";
 
 const base = import.meta.env.BASE_URL;
 </script>

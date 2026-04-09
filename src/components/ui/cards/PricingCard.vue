@@ -1,13 +1,9 @@
-<script setup>
-import BaseButton from "../../base/BaseButton.vue";
-import IconCheck from "../../icons/IconCheck.vue";
+<script setup lang="ts">
+import BaseButton from "@/components/base/BaseButton.vue";
+import IconCheck from "@/components/icons/IconCheck.vue";
+import type { PricingCard } from "@/types/index";
 
-defineProps({
-  name: String,
-  description: String,
-  price: Number,
-  features: Array,
-});
+defineProps<PricingCard>();
 </script>
 
 <template>

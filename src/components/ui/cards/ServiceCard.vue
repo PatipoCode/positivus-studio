@@ -1,11 +1,17 @@
-<script setup>
-import IconArrow from "../../icons/IconArrow.vue";
+<script setup lang="ts">
+import type { CardVariant } from "@/types/index";
+import IconArrow from "@/components/icons/IconArrow.vue";
 
-defineProps({
-  title: { type: String, required: true },
-  image: { type: String, required: true },
-  variant: { type: String, default: "light" },
-  href: { type: String, default: "#" },
+interface Props {
+  title: string;
+  image: string;
+  variant?: CardVariant;
+  href?: string;
+}
+
+withDefaults(defineProps<Props>(), {
+  variant: "light",
+  href: "#",
 });
 </script>
 

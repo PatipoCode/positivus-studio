@@ -1,9 +1,10 @@
-<script setup>
-import BaseContainer from "../layout/BaseContainer.vue";
+<script setup lang="ts">
+import BaseContainer from "@/components/layout/BaseContainer.vue";
+import type { Brand } from "@/types/index";
 
 const base = import.meta.env.BASE_URL;
 
-const brands = [
+const brands: Brand[] = [
   { name: "Amazon", src: base + "brands/amazon.png" },
   { name: "Dribbble", src: base + "brands/dribbble.png" },
   { name: "HubSpot", src: base + "brands/hubspot.png" },

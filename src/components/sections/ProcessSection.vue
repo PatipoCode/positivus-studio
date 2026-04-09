@@ -1,10 +1,11 @@
-<script setup>
-import BaseSection from "../layout/BaseSection.vue";
-import BaseAccordion from "../base/BaseAccordion.vue";
+<script setup lang="ts">
+import BaseSection from "@/components/layout/BaseSection.vue";
+import BaseAccordion from "@/components/base/BaseAccordion.vue";
+import type { Step } from "@/types/index";
 
 const base = import.meta.env.BASE_URL;
 
-const steps = [
+const steps: Step[] = [
   {
     number: "01",
     title: "Consultation",

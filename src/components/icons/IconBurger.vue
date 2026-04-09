@@ -1,7 +1,13 @@
-<script setup>
-defineProps({
-  open: { type: Boolean, default: false },
-  size: { type: Number, default: 28 },
+<script setup lang="ts">
+import type { IconProps } from "@/types/index";
+
+interface Props extends IconProps {
+  open?: boolean;
+}
+
+withDefaults(defineProps<Props>(), {
+  open: false,
+  size: 28,
 });
 </script>
 

@@ -1,9 +1,10 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
-import BaseButton from "../base/BaseButton.vue";
-import BaseInput from "../base/BaseInput.vue";
-import BaseContainer from "./BaseContainer.vue";
-import SuccessModal from "../ui/modals/SuccessModal.vue";
+import BaseButton from "@/components/base/BaseButton.vue";
+import BaseInput from "@/components/base/BaseInput.vue";
+import BaseContainer from "@/components/layout/BaseContainer.vue";
+import SuccessModal from "@/components/ui/modals/SuccessModal.vue";
+import type { NavLink, SocialIcon } from "@/types/index";
 
 const base = import.meta.env.BASE_URL;
 const subscribeEmail = ref("");
@@ -14,7 +15,7 @@ function subscribe() {
   subscribeEmail.value = "";
 }
 
-const navLinks = [
+const navLinks: NavLink[] = [
   { label: "About us", to: "/about" },
   { label: "Services", to: { path: "/", hash: "#services" } },
   { label: "Use Cases", to: { path: "/", hash: "#use-cases" } },
@@ -22,7 +23,7 @@ const navLinks = [
   { label: "Blog", to: "/blog" },
 ];
 
-const socialIcons = [
+const socialIcons: SocialIcon[] = [
   { label: "LinkedIn", href: "#", icon: base + "icons/icon-linkedin.svg" },
   { label: "Facebook", href: "#", icon: base + "icons/icon-facebook.svg" },
   { label: "X (Twitter)", href: "#", icon: base + "icons/icon-x.svg" },
@@ -108,8 +109,11 @@ const socialIcons = [
           >
             <BaseInput
               v-model="subscribeEmail"
+              id="subscribe-email"
+              name="subscribe-email"
               type="email"
               placeholder="example@mail.com"
+              autocomplete="email"
               aria-label="Your email address"
             />
             <BaseButton type="submit" variant="accent">Subscribe to news</BaseButton>

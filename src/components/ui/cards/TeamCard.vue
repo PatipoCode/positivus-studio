@@ -1,10 +1,7 @@
-<script setup>
-defineProps({
-  name: { type: String, required: true },
-  role: { type: String, required: true },
-  description: { type: String, required: true },
-  image: { type: String, required: true },
-});
+<script setup lang="ts">
+import type { Member } from "@/types/index";
+
+defineProps<Member>();
 </script>
 
 <template>

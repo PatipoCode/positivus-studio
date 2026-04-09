@@ -1,18 +1,18 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
-import BaseSection from "../layout/BaseSection.vue";
-import BaseButton from "../base/BaseButton.vue";
-import BaseInput from "../base/BaseInput.vue";
-import FormField from "../base/FormField.vue";
-import BaseRadioGroup from "../base/BaseRadioGroup.vue";
-import SuccessModal from "../ui/modals/SuccessModal.vue";
+import BaseSection from "@/components/layout/BaseSection.vue";
+import BaseButton from "@/components/base/BaseButton.vue";
+import BaseInput from "@/components/base/BaseInput.vue";
+import FormField from "@/components/base/FormField.vue";
+import BaseRadioGroup from "@/components/base/BaseRadioGroup.vue";
+import SuccessModal from "@/components/ui/modals/SuccessModal.vue";
 import { Form } from "vee-validate";
 
 const base = import.meta.env.BASE_URL;
 const radioValue = ref("say-hi");
 const isSuccessOpen = ref(false);
 
-function submit(_values, { resetForm }) {
+function submit(_values: Record<string, string>, { resetForm }: { resetForm: () => void }) {
   isSuccessOpen.value = true;
   resetForm();
   radioValue.value = "say-hi";
@@ -45,6 +45,7 @@ function submit(_values, { resetForm }) {
                   v-bind="field"
                   placeholder="John Smith"
                   variant="light"
+                  autocomplete="name"
                 />
               </template>
             </FormField>
@@ -55,6 +56,7 @@ function submit(_values, { resetForm }) {
                   v-bind="field"
                   placeholder="example@email.com"
                   variant="light"
+                  autocomplete="email"
                   :error="hasError"
                 />
               </template>

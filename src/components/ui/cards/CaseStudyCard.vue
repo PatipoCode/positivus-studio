@@ -1,16 +1,10 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
-import IconArrow from "../../icons/IconArrow.vue";
-import CaseStudyModal from "../modals/CaseStudyModal.vue";
+import IconArrow from "@/components/icons/IconArrow.vue";
+import CaseStudyModal from "@/components/ui/modals/CaseStudyModal.vue";
+import type { Case } from "@/types/index";
 
-const props = defineProps({
-  title: String,
-  description: { type: String, required: true },
-  client: String,
-  service: String,
-  metrics: Array,
-  details: String,
-});
+const props = defineProps<Case>();
 
 const isModalOpen = ref(false);
 </script>

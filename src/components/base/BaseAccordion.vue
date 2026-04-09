@@ -1,12 +1,16 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 
-const props = defineProps({
-  items: { type: Array, required: true },
-  defaultOpen: { type: Number, default: 0 },
+const props = withDefaults(defineProps<{
+  items: any[];
+  defaultOpen?: number;
+}>(), {
+  defaultOpen: 0,
 });
 
-const activeItemIndex = ref(props.defaultOpen);
+const activeItemIndex = ref<number | null>(props.defaultOpen);
+
+
 </script>
 
 <template>

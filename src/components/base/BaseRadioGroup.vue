@@ -1,8 +1,13 @@
-<script setup>
-defineProps({
-  options: { type: Array, required: true },
-  name: { type: String, required: true },
-});
+<script setup lang="ts">
+interface RadioOption {
+  label: string;
+  value: string;
+}
+
+defineProps<{
+  options: RadioOption[];
+  name: string;
+}>();
 
 const model = defineModel();
 </script>

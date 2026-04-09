@@ -1,8 +1,15 @@
-<script setup>
-defineProps({
-  arrowFill: { type: String, default: "#B9FF66" },
-  circleFill: { type: String, default: null },
-  size: { type: Number, default: 41 },
+<script setup lang="ts">
+import type { IconProps } from "@/types/index";
+
+interface Props extends IconProps {
+  arrowFill?: string;
+  circleFill?: string | null;
+}
+
+withDefaults(defineProps<Props>(), {
+  arrowFill: "#B9FF66",
+  circleFill: null,
+  size: 41,
 });
 </script>
 

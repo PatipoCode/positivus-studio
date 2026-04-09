@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import BaseContainer from "../components/layout/BaseContainer.vue";
 import PricingCard from "../components/ui/cards/PricingCard.vue";
 import UnderConstruction from "../components/ui/UnderConstruction.vue";

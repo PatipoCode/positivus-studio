@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { onMounted, onUnmounted } from "vue";
 
 const props = defineProps({
@@ -12,7 +12,7 @@ const emit = defineEmits(["update:modelValue"]);
 
 const close = () => emit("update:modelValue", false);
 
-const onKeydown = (e) => {
+const onKeydown = (e: KeyboardEvent) => {
   if (e.key === "Escape") close();
 };
 

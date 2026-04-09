@@ -1,5 +1,5 @@
-<script setup>
-import IconConstruction from "../icons/IconConstruction.vue";
+<script setup lang="ts">
+import IconConstruction from "@/components/icons/IconConstruction.vue";
 
 defineProps({
   title: { type: String, default: "Under Construction" },

@@ -1,6 +1,8 @@
-<script setup>
-defineProps({
-  size: { type: Number, default: 24 },
+<script setup lang="ts">
+import type { IconProps } from "@/types/index";
+
+withDefaults(defineProps<IconProps>(), {
+  size: 24,
 });
 </script>
 
