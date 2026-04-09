@@ -1,13 +1,13 @@
 import { defineRule } from "vee-validate";
 
-defineRule("required", (value) => {
+defineRule("required", (value: string) => {
   if (!value || !value.length) {
     return "This field is required";
   }
   return true;
 });
 
-defineRule("email", (value) => {
+defineRule("email", (value: string) => {
   if (!value || !value.length) {
     return true;
   }
@@ -17,7 +17,7 @@ defineRule("email", (value) => {
   return true;
 });
 
-defineRule("minLength", (value, [min]) => {
+defineRule("minLength", (value: string, [min]: [number]) => {
   if (!value || !value.length) {
     return true;
   }
@@ -27,7 +27,7 @@ defineRule("minLength", (value, [min]) => {
   return true;
 });
 
-defineRule("maxLength", (value, [max]) => {
+defineRule("maxLength", (value: string, [max]: [number]) => {
   if (!value || !value.length) {
     return true;
   }

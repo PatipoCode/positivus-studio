@@ -1,7 +1,10 @@
-<script setup>
-defineProps({
-  variant: { type: String, default: "dark" },
-  type: { type: String, default: "button" },
+<script setup lang="ts">
+withDefaults(defineProps<{
+  variant?: string;
+  type?: "button" | "submit" | "reset";
+}>(), {
+  variant: "dark",
+  type: "button",
 });
 </script>
 

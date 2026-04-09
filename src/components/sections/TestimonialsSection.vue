@@ -1,5 +1,5 @@
-<script setup>
-import BaseSection from "../layout/BaseSection.vue";
+<script setup lang="ts">
+import BaseSection from "@/components/layout/BaseSection.vue";
 </script>
 
 <template>

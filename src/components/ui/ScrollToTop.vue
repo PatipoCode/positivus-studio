@@ -1,6 +1,6 @@
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
-import IconArrow from "../icons/IconArrow.vue";
+import IconArrow from "@/components/icons/IconArrow.vue";
 
 const isVisible = ref(false);
 

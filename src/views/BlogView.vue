@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 import BaseContainer from "../components/layout/BaseContainer.vue";
 import UnderConstruction from "../components/ui/UnderConstruction.vue";

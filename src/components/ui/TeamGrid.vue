@@ -1,10 +1,11 @@
-<script setup>
-import BaseButton from "../base/BaseButton.vue";
-import TeamCard from "./cards/TeamCard.vue";
+<script setup lang="ts">
+import BaseButton from "@/components/base/BaseButton.vue";
+import TeamCard from "@/components/ui/cards/TeamCard.vue";
+import type { Member } from "@/types/index";
 
 const base = import.meta.env.BASE_URL;
 
-const members = [
+const members: Member[] = [
   {
     name: "John Smith",
     role: "CEO and Founder",

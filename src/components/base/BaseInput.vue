@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 const props = defineProps({
   modelValue: { type: String, default: "" },
   id: String,
@@ -12,8 +12,8 @@ const props = defineProps({
 
 const emit = defineEmits(["update:modelValue"]);
 
-function onInput(e) {
-  emit("update:modelValue", e.target.value);
+function onInput(e: Event) {
+  emit("update:modelValue", (e.target as HTMLInputElement).value);
 }
 </script>
 

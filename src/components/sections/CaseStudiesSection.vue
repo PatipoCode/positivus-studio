@@ -1,8 +1,9 @@
-<script setup>
-import BaseSection from "../layout/BaseSection.vue";
-import CaseStudyCard from "../ui/cards/CaseStudyCard.vue";
+<script setup lang="ts">
+import BaseSection from "@/components/layout/BaseSection.vue";
+import CaseStudyCard from "@/components/ui/cards/CaseStudyCard.vue";
+import type { Case } from "@/types/index";
 
-const cases = [
+const cases: Case[] = [
   {
     title: "Local Restaurant PPC Campaign",
     description:

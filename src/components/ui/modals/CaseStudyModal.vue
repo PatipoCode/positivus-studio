@@ -1,16 +1,17 @@
-<script setup>
-import BaseModal from "../../base/BaseModal.vue";
+<script setup lang="ts">
+import BaseModal from "@/components/base/BaseModal.vue";
+import type { CaseMetric } from "@/types/index";
 
-defineProps({
-  title: String,
-  description: String,
-  client: String,
-  service: String,
-  metrics: Array,
-  details: String,
-});
+defineProps<{
+  title?: string;
+  description?: string;
+  client?: string;
+  service?: string;
+  metrics?: CaseMetric[];
+  details?: string;
+}>();
 
-const model = defineModel({ type: Boolean });
+const model = defineModel({ default: false });
 </script>
 
 <template>

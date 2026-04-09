@@ -1,9 +1,9 @@
-<script setup>
+<script setup lang="ts">
 import { watch } from "vue";
-import BaseModal from "../../base/BaseModal.vue";
-import IconCheck from "../../icons/IconCheck.vue";
+import BaseModal from "@/components/base/BaseModal.vue";
+import IconCheck from "@/components/icons/IconCheck.vue";
 
-const model = defineModel({ type: Boolean });
+const model = defineModel({ default: false });
 
 watch(model, (val) => {
   if (val) {

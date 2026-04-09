@@ -1,7 +1,13 @@
-<script setup>
-defineProps({
-  size: { type: Number, default: 20 },
-  color: { type: String, default: "#fff" },
+<script setup lang="ts">
+import type { IconProps } from "@/types/index";
+
+interface Props extends IconProps {
+  color?: string;
+}
+
+withDefaults(defineProps<Props>(), {
+  size: 20,
+  color: "#fff",
 });
 </script>
 

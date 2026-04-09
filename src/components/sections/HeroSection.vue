@@ -1,7 +1,7 @@
-<script setup>
-import BaseButton from "../base/BaseButton.vue";
-import BaseContainer from "../layout/BaseContainer.vue";
-import BrandsBar from "../ui/BrandsBar.vue";
+<script setup lang="ts">
+import BaseButton from "@/components/base/BaseButton.vue";
+import BaseContainer from "@/components/layout/BaseContainer.vue";
+import BrandsBar from "@/components/ui/BrandsBar.vue";
 
 const base = import.meta.env.BASE_URL;
 </script>

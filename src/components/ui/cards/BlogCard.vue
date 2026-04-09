@@ -1,11 +1,8 @@
-<script setup>
-defineProps({
-  category: String,
-  date: String,
-  title: String,
-  description: String,
-  author: Object,
-  href: { type: String, default: "#" },
+<script setup lang="ts">
+import type { BlogCard } from "@/types/index";
+
+withDefaults(defineProps<BlogCard>(), {
+  href: "#",
 });
 </script>
 

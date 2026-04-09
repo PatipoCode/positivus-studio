@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import BaseContainer from "../components/layout/BaseContainer.vue";
@@ -6,7 +6,7 @@ import UnderConstruction from "../components/ui/UnderConstruction.vue";
 
 const route = useRoute();
 
-const services = {
+const services: Record<string, { title: string; image: string }> = {
   seo: {
     title: "Search Engine Optimization",
     image: "/services/image-service-seo.png",
@@ -33,7 +33,7 @@ const services = {
   },
 };
 
-const service = computed(() => services[route.params.slug]);
+const service = computed(() => services[route.params.slug as string]);
 </script>
 
 <template>

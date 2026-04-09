@@ -1,10 +1,11 @@
-<script setup>
-import ServiceCard from "./cards/ServiceCard.vue";
-import CtaBanner from "./CtaBanner.vue";
+<script setup lang="ts">
+import ServiceCard from "@/components/ui/cards/ServiceCard.vue";
+import CtaBanner from "@/components/ui/CtaBanner.vue";
+import type { Service } from "@/types/index";
 
 const base = import.meta.env.BASE_URL;
 
-const services = [
+const services: Service[] = [
   {
     title: "Search engine optimization",
     slug: "seo",
