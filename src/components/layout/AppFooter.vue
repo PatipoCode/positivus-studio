@@ -5,14 +5,32 @@ import BaseInput from '@/components/base/BaseInput.vue';
 import BaseContainer from '@/components/layout/BaseContainer.vue';
 import SuccessModal from '@/components/ui/modals/SuccessModal.vue';
 import type { NavLink, SocialIcon } from '@/types/index';
+import { subscribeNewsletter } from '@/api/newsletter';
 
 const base = import.meta.env.BASE_URL;
 const subscribeEmail = ref('');
 const isSuccessOpen = ref(false);
+const isSubmitting = ref(false);
+const subscribeError = ref('');
 
-function subscribe() {
-  isSuccessOpen.value = true;
-  subscribeEmail.value = '';
+function clearError() {
+  subscribeError.value = '';
+}
+
+async function subscribe() {
+  subscribeError.value = '';
+  isSubmitting.value = true;
+
+  try {
+    await subscribeNewsletter(subscribeEmail.value);
+    isSuccessOpen.value = true;
+    subscribeEmail.value = '';
+  } catch (err) {
+    subscribeError.value = 'Something went wrong. Please try again.';
+    console.error(err);
+  } finally {
+    isSubmitting.value = false;
+  }
 }
 
 const navLinks: NavLink[] = [
@@ -76,17 +94,23 @@ const socialIcons: SocialIcon[] = [
             class="footer__subscribe"
             aria-label="Newsletter subscription"
             @submit.prevent="subscribe"
+            @input="clearError"
           >
             <BaseInput
-              v-model="subscribeEmail"
               id="subscribe-email"
+              v-model="subscribeEmail"
               name="subscribe-email"
               type="email"
               placeholder="example@mail.com"
               autocomplete="email"
               aria-label="Your email address"
             />
-            <BaseButton type="submit" variant="accent">Subscribe to news</BaseButton>
+            <BaseButton type="submit" variant="accent" :disabled="isSubmitting">
+              {{ isSubmitting ? 'Subscribing...' : 'Subscribe to news' }}
+            </BaseButton>
+            <p v-if="subscribeError" class="footer__error" role="alert">
+              {{ subscribeError }}
+            </p>
           </form>
         </div>
 
@@ -248,6 +272,7 @@ const socialIcons: SocialIcon[] = [
     display: flex;
     align-items: center;
     gap: 20px;
+    position: relative;
 
     @media (max-width: $bp-lg) {
       flex-direction: column;
@@ -291,6 +316,14 @@ const socialIcons: SocialIcon[] = [
     &:hover {
       color: $color-accent;
     }
+  }
+
+  &__error {
+    position: absolute;
+    top: 85%;
+    left: 7%;
+    color: $color-error;
+    font-size: $text-sm;
   }
 }
 </style>

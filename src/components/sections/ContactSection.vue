@@ -7,15 +7,41 @@ import FormField from '@/components/base/FormField.vue';
 import BaseRadioGroup from '@/components/base/BaseRadioGroup.vue';
 import SuccessModal from '@/components/ui/modals/SuccessModal.vue';
 import { Form } from 'vee-validate';
+import { sendContact, type ContactPayload } from '@/api/contact';
 
 const base = import.meta.env.BASE_URL;
 const radioValue = ref('say-hi');
 const isSuccessOpen = ref(false);
+const isSubmitting = ref(false);
+const submitError = ref('');
 
-function submit(_values: Record<string, string>, { resetForm }: { resetForm: () => void }) {
-  isSuccessOpen.value = true;
-  resetForm();
-  radioValue.value = 'say-hi';
+function clearError() {
+  submitError.value = '';
+}
+
+async function submit(values: Record<string, string>, { resetForm }: { resetForm: () => void }) {
+  submitError.value = '';
+  isSubmitting.value = true;
+
+  try {
+    const payload: ContactPayload = {
+      name: values.name || undefined,
+      email: values.email,
+      message: values.message,
+      contactType: radioValue.value as 'say-hi' | 'get-quote',
+    };
+
+    await sendContact(payload);
+
+    isSuccessOpen.value = true;
+    resetForm();
+    radioValue.value = 'say-hi';
+  } catch (err) {
+    submitError.value = 'Something went wrong. Please try again.';
+    console.error(err);
+  } finally {
+    isSubmitting.value = false;
+  }
 }
 </script>
 
@@ -28,7 +54,7 @@ function submit(_values: Record<string, string>, { resetForm }: { resetForm: () 
   >
     <div class="contact">
       <div class="contact__inner">
-        <Form class="contact__form" @submit="submit" v-slot="{ meta }">
+        <Form v-slot="{ meta }" class="contact__form" @input="clearError" @submit="submit">
           <BaseRadioGroup
             v-model="radioValue"
             name="contact-type"
@@ -79,7 +105,14 @@ function submit(_values: Record<string, string>, { resetForm }: { resetForm: () 
             </FormField>
           </div>
 
-          <BaseButton variant="dark" type="submit" :disabled="!meta.valid">Send Message</BaseButton>
+          <div class="contact__submit">
+            <BaseButton variant="dark" type="submit" :disabled="!meta.valid || isSubmitting">
+              {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+            </BaseButton>
+            <p v-if="submitError" class="contact__error" role="alert">
+              {{ submitError }}
+            </p>
+          </div>
         </Form>
 
         <div class="contact__illustration" aria-hidden="true">
@@ -149,6 +182,22 @@ function submit(_values: Record<string, string>, { resetForm }: { resetForm: () 
       width: 100%;
       height: auto;
     }
+  }
+
+  &__submit {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+  }
+
+  &__error {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin: 8px 0 0;
+    color: $color-error;
+    font-size: $text-sm;
   }
 }
 </style>
