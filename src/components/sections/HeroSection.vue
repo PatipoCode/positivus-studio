@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import BaseButton from "@/components/base/BaseButton.vue";
-import BaseContainer from "@/components/layout/BaseContainer.vue";
-import BrandsBar from "@/components/ui/BrandsBar.vue";
+import BaseButton from '@/components/base/BaseButton.vue';
+import BaseContainer from '@/components/layout/BaseContainer.vue';
+import BrandsBar from '@/components/ui/BrandsBar.vue';
 
 const base = import.meta.env.BASE_URL;
 </script>
@@ -10,13 +10,10 @@ const base = import.meta.env.BASE_URL;
   <section class="hero" aria-label="Hero">
     <BaseContainer class="hero__content">
       <div class="hero__text">
-        <h1 class="hero__title">
-          Navigating the digital landscape for success
-        </h1>
+        <h1 class="hero__title">Navigating the digital landscape for success</h1>
         <p class="hero__description">
-          Our digital marketing agency helps businesses grow and succeed online
-          through a range of services including SEO, PPC, social media
-          marketing, and content creation.
+          Our digital marketing agency helps businesses grow and succeed online through a range of
+          services including SEO, PPC, social media marketing, and content creation.
         </p>
         <RouterLink to="/#contact"><BaseButton>Book a consultation</BaseButton></RouterLink>
       </div>

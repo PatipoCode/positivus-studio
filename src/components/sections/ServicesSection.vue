@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import BaseSection from "@/components/layout/BaseSection.vue";
-import ServiceGrid from "@/components/ui/ServiceGrid.vue";
+import BaseSection from '@/components/layout/BaseSection.vue';
+import ServiceGrid from '@/components/ui/ServiceGrid.vue';
 </script>
 
 <template>

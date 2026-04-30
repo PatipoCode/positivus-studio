@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import BaseSection from "@/components/layout/BaseSection.vue";
-import BaseButton from "@/components/base/BaseButton.vue";
-import BaseInput from "@/components/base/BaseInput.vue";
-import FormField from "@/components/base/FormField.vue";
-import BaseRadioGroup from "@/components/base/BaseRadioGroup.vue";
-import SuccessModal from "@/components/ui/modals/SuccessModal.vue";
-import { Form } from "vee-validate";
+import { ref } from 'vue';
+import BaseSection from '@/components/layout/BaseSection.vue';
+import BaseButton from '@/components/base/BaseButton.vue';
+import BaseInput from '@/components/base/BaseInput.vue';
+import FormField from '@/components/base/FormField.vue';
+import BaseRadioGroup from '@/components/base/BaseRadioGroup.vue';
+import SuccessModal from '@/components/ui/modals/SuccessModal.vue';
+import { Form } from 'vee-validate';
 
 const base = import.meta.env.BASE_URL;
-const radioValue = ref("say-hi");
+const radioValue = ref('say-hi');
 const isSuccessOpen = ref(false);
 
 function submit(_values: Record<string, string>, { resetForm }: { resetForm: () => void }) {
   isSuccessOpen.value = true;
   resetForm();
-  radioValue.value = "say-hi";
+  radioValue.value = 'say-hi';
 }
 </script>
 
@@ -83,10 +83,7 @@ function submit(_values: Record<string, string>, { resetForm }: { resetForm: () 
         </Form>
 
         <div class="contact__illustration" aria-hidden="true">
-          <img
-            :src="base + 'contact-Illustration.png'"
-            alt="Contact form illustration"
-          />
+          <img :src="base + 'contact-Illustration.png'" alt="Contact form illustration" />
         </div>
       </div>
     </div>

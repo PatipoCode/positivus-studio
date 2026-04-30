@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import IconArrow from "@/components/icons/IconArrow.vue";
-import CaseStudyModal from "@/components/ui/modals/CaseStudyModal.vue";
-import type { Case } from "@/types/index";
+import { ref } from 'vue';
+import IconArrow from '@/components/icons/IconArrow.vue';
+import CaseStudyModal from '@/components/ui/modals/CaseStudyModal.vue';
+import type { Case } from '@/types/index';
 
 const props = defineProps<Case>();
 

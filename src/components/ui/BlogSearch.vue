@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import BaseInput from "@/components/base/BaseInput.vue";
-import IconSearch from "@/components/icons/IconSearch.vue";
+import BaseInput from '@/components/base/BaseInput.vue';
+import IconSearch from '@/components/icons/IconSearch.vue';
 
-const model = defineModel({ type: String, default: "" });
+const model = defineModel({ type: String, default: '' });
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { IconProps } from "@/types/index";
+import type { IconProps } from '@/types/index';
 
 interface Props extends IconProps {
   color?: string;
@@ -7,7 +7,7 @@ interface Props extends IconProps {
 
 withDefaults(defineProps<Props>(), {
   size: 20,
-  color: "#fff",
+  color: '#fff',
 });
 </script>
 
@@ -21,11 +21,6 @@ withDefaults(defineProps<Props>(), {
     aria-hidden="true"
   >
     <circle cx="8.5" cy="8.5" r="7.5" :stroke="color" stroke-width="1.8" />
-    <path
-      d="M14 14L19 19"
-      :stroke="color"
-      stroke-width="1.8"
-      stroke-linecap="round"
-    />
+    <path d="M14 14L19 19" :stroke="color" stroke-width="1.8" stroke-linecap="round" />
   </svg>
 </template>

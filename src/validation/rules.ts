@@ -1,23 +1,23 @@
-import { defineRule } from "vee-validate";
+import { defineRule } from 'vee-validate';
 
-defineRule("required", (value: string) => {
+defineRule('required', (value: string) => {
   if (!value || !value.length) {
-    return "This field is required";
+    return 'This field is required';
   }
   return true;
 });
 
-defineRule("email", (value: string) => {
+defineRule('email', (value: string) => {
   if (!value || !value.length) {
     return true;
   }
   if (!/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i.test(value)) {
-    return "This field must be a valid email";
+    return 'This field must be a valid email';
   }
   return true;
 });
 
-defineRule("minLength", (value: string, [min]: [number]) => {
+defineRule('minLength', (value: string, [min]: [number]) => {
   if (!value || !value.length) {
     return true;
   }
@@ -27,7 +27,7 @@ defineRule("minLength", (value: string, [min]: [number]) => {
   return true;
 });
 
-defineRule("maxLength", (value: string, [max]: [number]) => {
+defineRule('maxLength', (value: string, [max]: [number]) => {
   if (!value || !value.length) {
     return true;
   }
@@ -36,4 +36,3 @@ defineRule("maxLength", (value: string, [max]: [number]) => {
   }
   return true;
 });
-

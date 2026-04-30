@@ -1,16 +1,17 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue';
 
-const props = withDefaults(defineProps<{
-  items: any[];
-  defaultOpen?: number;
-}>(), {
-  defaultOpen: 0,
-});
+const props = withDefaults(
+  defineProps<{
+    items: any[];
+    defaultOpen?: number;
+  }>(),
+  {
+    defaultOpen: 0,
+  },
+);
 
 const activeItemIndex = ref<number | null>(props.defaultOpen);
-
-
 </script>
 
 <template>
@@ -27,12 +28,7 @@ const activeItemIndex = ref<number | null>(props.defaultOpen);
         :aria-controls="`accordion-body-${index}`"
         @click="activeItemIndex = activeItemIndex === index ? null : index"
       >
-        <slot
-          name="header"
-          :item="item"
-          :index="index"
-          :is-open="activeItemIndex === index"
-        />
+        <slot name="header" :item="item" :index="index" :is-open="activeItemIndex === index" />
       </button>
       <Transition name="accordion">
         <div

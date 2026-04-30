@@ -1,32 +1,32 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import BaseButton from "@/components/base/BaseButton.vue";
-import BaseInput from "@/components/base/BaseInput.vue";
-import BaseContainer from "@/components/layout/BaseContainer.vue";
-import SuccessModal from "@/components/ui/modals/SuccessModal.vue";
-import type { NavLink, SocialIcon } from "@/types/index";
+import { ref } from 'vue';
+import BaseButton from '@/components/base/BaseButton.vue';
+import BaseInput from '@/components/base/BaseInput.vue';
+import BaseContainer from '@/components/layout/BaseContainer.vue';
+import SuccessModal from '@/components/ui/modals/SuccessModal.vue';
+import type { NavLink, SocialIcon } from '@/types/index';
 
 const base = import.meta.env.BASE_URL;
-const subscribeEmail = ref("");
+const subscribeEmail = ref('');
 const isSuccessOpen = ref(false);
 
 function subscribe() {
   isSuccessOpen.value = true;
-  subscribeEmail.value = "";
+  subscribeEmail.value = '';
 }
 
 const navLinks: NavLink[] = [
-  { label: "About us", to: "/about" },
-  { label: "Services", to: { path: "/", hash: "#services" } },
-  { label: "Use Cases", to: { path: "/", hash: "#use-cases" } },
-  { label: "Pricing", to: "/pricing" },
-  { label: "Blog", to: "/blog" },
+  { label: 'About us', to: '/about' },
+  { label: 'Services', to: { path: '/', hash: '#services' } },
+  { label: 'Use Cases', to: { path: '/', hash: '#use-cases' } },
+  { label: 'Pricing', to: '/pricing' },
+  { label: 'Blog', to: '/blog' },
 ];
 
 const socialIcons: SocialIcon[] = [
-  { label: "LinkedIn", href: "#", icon: base + "icons/icon-linkedin.svg" },
-  { label: "Facebook", href: "#", icon: base + "icons/icon-facebook.svg" },
-  { label: "X (Twitter)", href: "#", icon: base + "icons/icon-x.svg" },
+  { label: 'LinkedIn', href: '#', icon: base + 'icons/icon-linkedin.svg' },
+  { label: 'Facebook', href: '#', icon: base + 'icons/icon-facebook.svg' },
+  { label: 'X (Twitter)', href: '#', icon: base + 'icons/icon-x.svg' },
 ];
 </script>
 
@@ -35,52 +35,26 @@ const socialIcons: SocialIcon[] = [
     <BaseContainer>
       <div class="footer__inner">
         <div class="footer__top">
-          <a
-            href="/"
-            class="footer__logo"
-            aria-label="Positivus — go to homepage"
-          >
-            <img
-              :src="base + 'icons/logo.svg'"
-              alt="Positivus logo"
-              width="180"
-              height="29"
-            />
+          <a href="/" class="footer__logo" aria-label="Positivus — go to homepage">
+            <img :src="base + 'icons/logo.svg'" alt="Positivus logo" width="180" height="29" />
           </a>
 
           <nav class="footer__nav" aria-label="Footer navigation">
             <ul class="footer__nav-list">
-              <li
-                v-for="link in navLinks"
-                :key="link.label"
-                class="footer__nav-item"
-              >
-                <RouterLink
-                  :to="link.to"
-                  class="footer__nav-link"
-                >{{ link.label }}</RouterLink>
+              <li v-for="link in navLinks" :key="link.label" class="footer__nav-item">
+                <RouterLink :to="link.to" class="footer__nav-link">{{ link.label }}</RouterLink>
               </li>
             </ul>
           </nav>
 
           <ul class="footer__social" aria-label="Social media links">
-            <li
-              v-for="icon in socialIcons"
-              :key="icon.label"
-              class="footer__social-item"
-            >
+            <li v-for="icon in socialIcons" :key="icon.label" class="footer__social-item">
               <a
                 :href="icon.href"
                 :aria-label="`Follow us on ${icon.label}`"
                 class="footer__social-link"
               >
-                <img
-                  :src="icon.icon"
-                  :alt="icon.label"
-                  width="30"
-                  height="30"
-                  aria-hidden="true"
-                />
+                <img :src="icon.icon" :alt="icon.label" width="30" height="30" aria-hidden="true" />
               </a>
             </li>
           </ul>
@@ -91,14 +65,10 @@ const socialIcons: SocialIcon[] = [
             <span class="footer__contact-title">Contact us:</span>
             <div class="footer__contact-info">
               <p>
-                <a href="mailto:info@positivus.com"
-                  >Email: info@positivus.com</a
-                >
+                <a href="mailto:info@positivus.com">Email: info@positivus.com</a>
               </p>
               <p><a href="tel:5555678901">Phone: 555-567-8901</a></p>
-              <p>
-                Address: 1234 Main St<br />Moonstone City, Stardust State 12345
-              </p>
+              <p>Address: 1234 Main St<br />Moonstone City, Stardust State 12345</p>
             </div>
           </address>
 
@@ -200,7 +170,9 @@ const socialIcons: SocialIcon[] = [
     text-decoration: underline;
     padding: 6px 12px;
     border-radius: $radius-sm;
-    transition: background-color 0.2s, color 0.2s;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
 
     &:hover {
       background-color: $color-white;
@@ -288,7 +260,6 @@ const socialIcons: SocialIcon[] = [
       }
     }
   }
-
 
   &__bottom {
     display: flex;

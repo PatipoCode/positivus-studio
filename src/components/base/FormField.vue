@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import BaseFormField from "./BaseFormField.vue";
-import { Field, ErrorMessage } from "vee-validate";
+import BaseFormField from './BaseFormField.vue';
+import { Field, ErrorMessage } from 'vee-validate';
 
 interface Props {
   name: string;
@@ -12,7 +12,6 @@ interface Props {
 withDefaults(defineProps<Props>(), {
   required: false,
 });
-
 </script>
 
 <template>

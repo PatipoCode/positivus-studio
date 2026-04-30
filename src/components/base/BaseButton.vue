@@ -1,11 +1,14 @@
 <script setup lang="ts">
-withDefaults(defineProps<{
-  variant?: string;
-  type?: "button" | "submit" | "reset";
-}>(), {
-  variant: "dark",
-  type: "button",
-});
+withDefaults(
+  defineProps<{
+    variant?: string;
+    type?: 'button' | 'submit' | 'reset';
+  }>(),
+  {
+    variant: 'dark',
+    type: 'button',
+  },
+);
 </script>
 
 <template>

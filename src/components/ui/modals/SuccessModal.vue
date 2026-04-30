@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { watch } from "vue";
-import BaseModal from "@/components/base/BaseModal.vue";
-import IconCheck from "@/components/icons/IconCheck.vue";
+import { watch } from 'vue';
+import BaseModal from '@/components/base/BaseModal.vue';
+import IconCheck from '@/components/icons/IconCheck.vue';
 
 const model = defineModel({ default: false });
 
@@ -14,11 +14,10 @@ watch(model, (val) => {
 });
 
 defineProps({
-  title: { type: String, default: "Message Sent!" },
+  title: { type: String, default: 'Message Sent!' },
   message: {
     type: String,
-    default:
-      "Thank you for reaching out. We'll get back to you as soon as possible.",
+    default: "Thank you for reaching out. We'll get back to you as soon as possible.",
   },
 });
 </script>

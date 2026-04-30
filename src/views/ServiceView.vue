@@ -1,35 +1,35 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { useRoute } from "vue-router";
-import BaseContainer from "../components/layout/BaseContainer.vue";
-import UnderConstruction from "../components/ui/UnderConstruction.vue";
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
+import BaseContainer from '../components/layout/BaseContainer.vue';
+import UnderConstruction from '../components/ui/UnderConstruction.vue';
 
 const route = useRoute();
 
 const services: Record<string, { title: string; image: string }> = {
   seo: {
-    title: "Search Engine Optimization",
-    image: "/services/image-service-seo.png",
+    title: 'Search Engine Optimization',
+    image: '/services/image-service-seo.png',
   },
   ppc: {
-    title: "Pay-Per-Click Advertising",
-    image: "/services/image-service-ppc.png",
+    title: 'Pay-Per-Click Advertising',
+    image: '/services/image-service-ppc.png',
   },
   smm: {
-    title: "Social Media Marketing",
-    image: "/services/image-service-smm.png",
+    title: 'Social Media Marketing',
+    image: '/services/image-service-smm.png',
   },
-  "email-marketing": {
-    title: "Email Marketing",
-    image: "/services/image-service-email-marketing.png",
+  'email-marketing': {
+    title: 'Email Marketing',
+    image: '/services/image-service-email-marketing.png',
   },
-  "content-creation": {
-    title: "Content Creation",
-    image: "/services/image-service-content-creation.png",
+  'content-creation': {
+    title: 'Content Creation',
+    image: '/services/image-service-content-creation.png',
   },
   analytics: {
-    title: "Analytics and Tracking",
-    image: "/services/image-service-analytics.png",
+    title: 'Analytics and Tracking',
+    image: '/services/image-service-analytics.png',
   },
 };
 

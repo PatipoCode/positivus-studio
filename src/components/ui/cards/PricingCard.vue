@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import BaseButton from "@/components/base/BaseButton.vue";
-import IconCheck from "@/components/icons/IconCheck.vue";
-import type { PricingCard } from "@/types/index";
+import BaseButton from '@/components/base/BaseButton.vue';
+import IconCheck from '@/components/icons/IconCheck.vue';
+import type { PricingCard } from '@/types/index';
 
 defineProps<PricingCard>();
 </script>
@@ -19,22 +19,15 @@ defineProps<PricingCard>();
     </div>
 
     <ul class="pricing-card__features">
-      <li
-        v-for="feature in features"
-        :key="feature.label"
-        class="pricing-card__feature"
-      >
+      <li v-for="feature in features" :key="feature.label" class="pricing-card__feature">
         <IconCheck class="pricing-card__check" />
         <span
-          >{{ feature.label }}
-          <strong v-if="feature.value">{{ feature.value }}</strong></span
+          >{{ feature.label }} <strong v-if="feature.value">{{ feature.value }}</strong></span
         >
       </li>
     </ul>
 
-    <BaseButton variant="accent" class="pricing-card__btn"
-      >Get Started</BaseButton
-    >
+    <BaseButton variant="accent" class="pricing-card__btn">Get Started</BaseButton>
   </div>
 </template>
 

@@ -1,21 +1,18 @@
 <script setup lang="ts">
-import BaseButton from "../components/base/BaseButton.vue";
-import BrandsBar from "../components/ui/BrandsBar.vue";
-import BaseSection from "../components/layout/BaseSection.vue";
-import ServiceGrid from "../components/ui/ServiceGrid.vue";
+import BaseButton from '../components/base/BaseButton.vue';
+import BrandsBar from '../components/ui/BrandsBar.vue';
+import BaseSection from '../components/layout/BaseSection.vue';
+import ServiceGrid from '../components/ui/ServiceGrid.vue';
 </script>
 
 <template>
   <main class="about">
     <h1 class="about__title">We Navigate the digital landscape for success</h1>
     <p class="about__description">
-      Our digital marketing agency helps businesses grow and succeed online
-      through a range of services including SEO, PPC, social media marketing,
-      and content creation.
+      Our digital marketing agency helps businesses grow and succeed online through a range of
+      services including SEO, PPC, social media marketing, and content creation.
     </p>
-    <a href="/#contact"
-      ><BaseButton variant="dark">Book a consultation</BaseButton></a
-    >
+    <a href="/#contact"><BaseButton variant="dark">Book a consultation</BaseButton></a>
   </main>
   <BrandsBar />
   <BaseSection

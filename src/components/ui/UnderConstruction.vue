@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import IconConstruction from "@/components/icons/IconConstruction.vue";
+import IconConstruction from '@/components/icons/IconConstruction.vue';
 
 defineProps({
-  title: { type: String, default: "Under Construction" },
+  title: { type: String, default: 'Under Construction' },
   message: {
     type: String,
-    default: "This page is currently being built. Check back soon!",
+    default: 'This page is currently being built. Check back soon!',
   },
 });
 </script>

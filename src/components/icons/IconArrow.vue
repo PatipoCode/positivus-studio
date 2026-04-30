@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { IconProps } from "@/types/index";
+import type { IconProps } from '@/types/index';
 
 interface Props extends IconProps {
   arrowFill?: string;
@@ -7,7 +7,7 @@ interface Props extends IconProps {
 }
 
 withDefaults(defineProps<Props>(), {
-  arrowFill: "#B9FF66",
+  arrowFill: '#B9FF66',
   circleFill: null,
   size: 41,
 });

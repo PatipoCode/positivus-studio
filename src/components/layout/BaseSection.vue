@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import BaseContainer from "@/components/layout/BaseContainer.vue";
+import BaseContainer from '@/components/layout/BaseContainer.vue';
 
 defineProps({
   id: String,

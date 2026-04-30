@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
-import IconArrow from "@/components/icons/IconArrow.vue";
+import { ref, onMounted, onUnmounted } from 'vue';
+import IconArrow from '@/components/icons/IconArrow.vue';
 
 const isVisible = ref(false);
 
@@ -9,11 +9,11 @@ const handleScroll = () => {
 };
 
 const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-onMounted(() => window.addEventListener("scroll", handleScroll));
-onUnmounted(() => window.removeEventListener("scroll", handleScroll));
+onMounted(() => window.addEventListener('scroll', handleScroll));
+onUnmounted(() => window.removeEventListener('scroll', handleScroll));
 </script>
 
 <template>
