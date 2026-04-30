@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { CardVariant } from "@/types/index";
-import IconArrow from "@/components/icons/IconArrow.vue";
+import type { CardVariant } from '@/types/index';
+import IconArrow from '@/components/icons/IconArrow.vue';
 
 interface Props {
   title: string;
@@ -10,8 +10,8 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-  variant: "light",
-  href: "#",
+  variant: 'light',
+  href: '#',
 });
 </script>
 
@@ -22,11 +22,7 @@ withDefaults(defineProps<Props>(), {
         <span class="card__title-text">{{ title }}</span>
       </h3>
 
-      <RouterLink
-        :to="href"
-        class="card__link"
-        :aria-label="`Learn more about ${title}`"
-      >
+      <RouterLink :to="href" class="card__link" :aria-label="`Learn more about ${title}`">
         <IconArrow
           class="card__link-icon"
           :circle-fill="variant === 'dark' ? '#fff' : '#191A23'"

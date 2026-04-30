@@ -1,50 +1,50 @@
 <script setup lang="ts">
-import BaseSection from "@/components/layout/BaseSection.vue";
-import CaseStudyCard from "@/components/ui/cards/CaseStudyCard.vue";
-import type { Case } from "@/types/index";
+import BaseSection from '@/components/layout/BaseSection.vue';
+import CaseStudyCard from '@/components/ui/cards/CaseStudyCard.vue';
+import type { Case } from '@/types/index';
 
 const cases: Case[] = [
   {
-    title: "Local Restaurant PPC Campaign",
+    title: 'Local Restaurant PPC Campaign',
     description:
-      "For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.",
-    client: "Bella Cucina Restaurant",
-    service: "Pay-Per-Click Advertising",
+      'For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.',
+    client: 'Bella Cucina Restaurant',
+    service: 'Pay-Per-Click Advertising',
     metrics: [
-      { label: "Website Traffic", value: "+50%" },
-      { label: "Sales Increase", value: "+25%" },
-      { label: "Campaign Duration", value: "3 months" },
+      { label: 'Website Traffic', value: '+50%' },
+      { label: 'Sales Increase', value: '+25%' },
+      { label: 'Campaign Duration', value: '3 months' },
     ],
     details:
-      "We identified high-intent local keywords, created geo-targeted ad campaigns, and optimized landing pages for conversions. A/B testing on ad copy improved click-through rates by 35%.",
+      'We identified high-intent local keywords, created geo-targeted ad campaigns, and optimized landing pages for conversions. A/B testing on ad copy improved click-through rates by 35%.',
   },
   {
-    title: "B2B Software SEO Strategy",
+    title: 'B2B Software SEO Strategy',
     description:
-      "For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.",
-    client: "CloudSync Solutions",
-    service: "Search Engine Optimization",
+      'For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.',
+    client: 'CloudSync Solutions',
+    service: 'Search Engine Optimization',
     metrics: [
-      { label: "Organic Traffic", value: "+200%" },
-      { label: "Keyword Rankings", value: "Page 1" },
-      { label: "Lead Generation", value: "+150%" },
+      { label: 'Organic Traffic', value: '+200%' },
+      { label: 'Keyword Rankings', value: 'Page 1' },
+      { label: 'Lead Generation', value: '+150%' },
     ],
     details:
-      "We conducted a comprehensive technical SEO audit, built a content strategy around high-value keywords, and implemented a link-building campaign targeting industry publications.",
+      'We conducted a comprehensive technical SEO audit, built a content strategy around high-value keywords, and implemented a link-building campaign targeting industry publications.',
   },
   {
-    title: "Retail Chain Social Media Campaign",
+    title: 'Retail Chain Social Media Campaign',
     description:
-      "For a national retail chain, we created a social media marketing campaign that increased followers by 25% and generated a 20% increase in online sales.",
-    client: "TrendMart Retail",
-    service: "Social Media Marketing",
+      'For a national retail chain, we created a social media marketing campaign that increased followers by 25% and generated a 20% increase in online sales.',
+    client: 'TrendMart Retail',
+    service: 'Social Media Marketing',
     metrics: [
-      { label: "Followers Growth", value: "+25%" },
-      { label: "Online Sales", value: "+20%" },
-      { label: "Engagement Rate", value: "+40%" },
+      { label: 'Followers Growth', value: '+25%' },
+      { label: 'Online Sales', value: '+20%' },
+      { label: 'Engagement Rate', value: '+40%' },
     ],
     details:
-      "We developed a multi-platform content calendar, partnered with micro-influencers, and ran targeted paid social campaigns with dynamic product ads.",
+      'We developed a multi-platform content calendar, partnered with micro-influencers, and ran targeted paid social campaigns with dynamic product ads.',
   },
 ];
 </script>

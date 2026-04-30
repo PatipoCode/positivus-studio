@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { BlogCard } from "@/types/index";
+import type { BlogCard } from '@/types/index';
 
 withDefaults(defineProps<BlogCard>(), {
-  href: "#",
+  href: '#',
 });
 </script>
 

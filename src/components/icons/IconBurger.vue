@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { IconProps } from "@/types/index";
+import type { IconProps } from '@/types/index';
 
 interface Props extends IconProps {
   open?: boolean;

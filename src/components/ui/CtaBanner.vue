@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import BaseButton from "@/components/base/BaseButton.vue";
+import BaseButton from '@/components/base/BaseButton.vue';
 
 const base = import.meta.env.BASE_URL;
 </script>
@@ -9,19 +9,12 @@ const base = import.meta.env.BASE_URL;
     <div class="cta__content">
       <h3 class="cta__title">Let's make things happen</h3>
       <p class="cta__description">
-        Contact us today to learn more about how our digital marketing services
-        can help your business grow and succeed online.
+        Contact us today to learn more about how our digital marketing services can help your
+        business grow and succeed online.
       </p>
-      <RouterLink to="/#contact"
-        ><BaseButton>Get your free proposal!</BaseButton></RouterLink
-      >
+      <RouterLink to="/#contact"><BaseButton>Get your free proposal!</BaseButton></RouterLink>
     </div>
-    <img
-      :src="base + 'icons/cta-Illustration.svg'"
-      alt=""
-      class="cta__image"
-      aria-hidden="true"
-    />
+    <img :src="base + 'icons/cta-Illustration.svg'" alt="" class="cta__image" aria-hidden="true" />
   </div>
 </template>
 

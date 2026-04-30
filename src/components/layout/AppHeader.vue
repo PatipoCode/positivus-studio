@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
-import { useRoute } from "vue-router";
-import BaseButton from "@/components/base/BaseButton.vue";
-import BaseContainer from "@/components/layout/BaseContainer.vue";
-import IconBurger from "@/components/icons/IconBurger.vue";
-import type { NavLink } from "@/types/index";
+import { ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
+import BaseButton from '@/components/base/BaseButton.vue';
+import BaseContainer from '@/components/layout/BaseContainer.vue';
+import IconBurger from '@/components/icons/IconBurger.vue';
+import type { NavLink } from '@/types/index';
 
 const base = import.meta.env.BASE_URL;
 const route = useRoute();
 const isMenuOpen = ref(false);
 
 const navLinks: NavLink[] = [
-  { label: "About us", to: "/about" },
-  { label: "Services", to: { path: "/", hash: "#services" } },
-  { label: "Use Cases", to: { path: "/", hash: "#use-cases" } },
-  { label: "Pricing", to: "/pricing" },
-  { label: "Blog", to: "/blog" },
+  { label: 'About us', to: '/about' },
+  { label: 'Services', to: { path: '/', hash: '#services' } },
+  { label: 'Use Cases', to: { path: '/', hash: '#use-cases' } },
+  { label: 'Pricing', to: '/pricing' },
+  { label: 'Blog', to: '/blog' },
 ];
 
 const toggleMenu = () => (isMenuOpen.value = !isMenuOpen.value);
@@ -24,7 +24,7 @@ const closeMenu = () => (isMenuOpen.value = false);
 watch(() => route.path, closeMenu);
 
 watch(isMenuOpen, (val) => {
-  document.body.style.overflow = val ? "hidden" : "";
+  document.body.style.overflow = val ? 'hidden' : '';
 });
 </script>
 
@@ -32,17 +32,8 @@ watch(isMenuOpen, (val) => {
   <header class="header">
     <BaseContainer>
       <nav class="header__nav" aria-label="Main navigation">
-        <RouterLink
-          to="/"
-          class="header__logo"
-          aria-label="Positivus — go to homepage"
-        >
-          <img
-            :src="base + 'icons/logo.svg'"
-            alt="Positivus logo"
-            width="220"
-            height="36"
-          />
+        <RouterLink to="/" class="header__logo" aria-label="Positivus — go to homepage">
+          <img :src="base + 'icons/logo.svg'" alt="Positivus logo" width="220" height="36" />
         </RouterLink>
 
         <div class="header__links">
@@ -52,7 +43,8 @@ watch(isMenuOpen, (val) => {
             :to="link.to"
             class="header__link"
             :aria-current="route.path === link.to ? 'page' : undefined"
-          >{{ link.label }}</RouterLink>
+            >{{ link.label }}</RouterLink
+          >
           <RouterLink to="/#contact">
             <BaseButton variant="outline">Request a quote</BaseButton>
           </RouterLink>
@@ -88,12 +80,11 @@ watch(isMenuOpen, (val) => {
               :to="link.to"
               class="header__overlay-link"
               @click="closeMenu"
-            >{{ link.label }}</RouterLink>
+              >{{ link.label }}</RouterLink
+            >
           </nav>
           <RouterLink to="/#contact" @click="closeMenu">
-            <BaseButton variant="dark" class="header__overlay-cta"
-              >Request a quote</BaseButton
-            >
+            <BaseButton variant="dark" class="header__overlay-cta">Request a quote</BaseButton>
           </RouterLink>
         </BaseContainer>
       </div>
@@ -143,7 +134,9 @@ watch(isMenuOpen, (val) => {
     white-space: nowrap;
     padding: 6px 12px;
     border-radius: $radius-sm;
-    transition: background-color 0.2s, color 0.2s;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
 
     &:hover {
       background-color: $color-dark;

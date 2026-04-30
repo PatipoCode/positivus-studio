@@ -1,23 +1,23 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted } from 'vue';
 
 const props = defineProps({
   modelValue: { type: Boolean, required: true },
-  title: { type: String, default: "" },
-  maxWidth: { type: String, default: "600px" },
+  title: { type: String, default: '' },
+  maxWidth: { type: String, default: '600px' },
   closable: { type: Boolean, default: true },
 });
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(['update:modelValue']);
 
-const close = () => emit("update:modelValue", false);
+const close = () => emit('update:modelValue', false);
 
 const onKeydown = (e: KeyboardEvent) => {
-  if (e.key === "Escape") close();
+  if (e.key === 'Escape') close();
 };
 
-onMounted(() => window.addEventListener("keydown", onKeydown));
-onUnmounted(() => window.removeEventListener("keydown", onKeydown));
+onMounted(() => window.addEventListener('keydown', onKeydown));
+onUnmounted(() => window.removeEventListener('keydown', onKeydown));
 </script>
 
 <template>

@@ -3,10 +3,10 @@ $bp-md: 768px;
 $bp-lg: 1024px;
 $bp-xl: 1440px;
 
-$color-accent: #B9FF66;
-$color-dark: #191A23;
-$color-dark-2: #292A32;
-$color-card: #F3F3F3;
+$color-accent: #b9ff66;
+$color-dark: #191a23;
+$color-dark-2: #292a32;
+$color-card: #f3f3f3;
 $color-white: #fff;
 $color-black: #000;
 $color-error: #e74c3c;
@@ -15,7 +15,7 @@ $color-text-light: #555;
 $color-text-muted: #666;
 $color-text-subtle: #444;
 
-$font-sans: "Space Grotesk", sans-serif;
+$font-sans: 'Space Grotesk', sans-serif;
 
 $text-sm: clamp(13px, 0.9vw, 14px);
 $text-base: clamp(14px, 1vw, 16px);
@@ -36,6 +36,3 @@ $section-padding: clamp(40px, 5vw, 70px) 0;
 $card-padding: clamp(28px, 4vw, 60px);
 $container-padding: clamp(16px, 6vw, 100px);
 $form-padding: clamp(28px, 6vw, 60px) clamp(28px, 6vw, 100px);
-
-
-

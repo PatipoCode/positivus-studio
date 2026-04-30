@@ -1,19 +1,19 @@
 <script setup lang="ts">
 const props = defineProps({
-  modelValue: { type: String, default: "" },
+  modelValue: { type: String, default: '' },
   id: String,
   name: String,
-  type: { type: String, default: "text" },
+  type: { type: String, default: 'text' },
   placeholder: String,
   multiline: { type: Boolean, default: false },
-  variant: { type: String, default: "dark" },
+  variant: { type: String, default: 'dark' },
   error: { type: Boolean, default: false },
 });
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(['update:modelValue']);
 
 function onInput(e: Event) {
-  emit("update:modelValue", (e.target as HTMLInputElement).value);
+  emit('update:modelValue', (e.target as HTMLInputElement).value);
 }
 </script>
 

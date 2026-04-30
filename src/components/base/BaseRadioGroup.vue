@@ -14,11 +14,7 @@ const model = defineModel();
 
 <template>
   <div class="radio-group">
-    <label
-      v-for="option in options"
-      :key="option.value"
-      class="radio-group__option"
-    >
+    <label v-for="option in options" :key="option.value" class="radio-group__option">
       <input
         type="radio"
         :name="name"
@@ -55,7 +51,7 @@ const model = defineModel();
     flex-shrink: 0;
 
     &:checked::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 50%;
       left: 50%;

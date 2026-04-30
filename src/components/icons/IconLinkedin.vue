@@ -1,11 +1,5 @@
 <template>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="30"
-    height="30"
-    viewBox="0 0 30 30"
-    fill="none"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
     <circle cx="15" cy="15" r="15" fill="white" />
     <path d="M8.22178 22.0586H11.3059V12.0742H8.22178V22.0586Z" fill="black" />
     <path

@@ -1,52 +1,52 @@
 <script setup lang="ts">
-import BaseButton from "@/components/base/BaseButton.vue";
-import TeamCard from "@/components/ui/cards/TeamCard.vue";
-import type { Member } from "@/types/index";
+import BaseButton from '@/components/base/BaseButton.vue';
+import TeamCard from '@/components/ui/cards/TeamCard.vue';
+import type { Member } from '@/types/index';
 
 const base = import.meta.env.BASE_URL;
 
 const members: Member[] = [
   {
-    name: "John Smith",
-    role: "CEO and Founder",
+    name: 'John Smith',
+    role: 'CEO and Founder',
     description:
-      "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
-    image: base + "team/john-smith.png",
+      '10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy',
+    image: base + 'team/john-smith.png',
   },
   {
-    name: "Jane Doe",
-    role: "Director of Operations",
+    name: 'Jane Doe',
+    role: 'Director of Operations',
     description:
-      "7+ years of experience in project management and team leadership. Strong organizational and communication skills",
-    image: base + "team/jane-doe.png",
+      '7+ years of experience in project management and team leadership. Strong organizational and communication skills',
+    image: base + 'team/jane-doe.png',
   },
   {
-    name: "Michael Brown",
-    role: "Senior SEO Specialist",
+    name: 'Michael Brown',
+    role: 'Senior SEO Specialist',
     description:
-      "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
-    image: base + "team/michael-brown.png",
+      '5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization',
+    image: base + 'team/michael-brown.png',
   },
   {
-    name: "Emily Johnson",
-    role: "PPC Manager",
+    name: 'Emily Johnson',
+    role: 'PPC Manager',
     description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
-    image: base + "team/emily-johnson.png",
+      '3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis',
+    image: base + 'team/emily-johnson.png',
   },
   {
-    name: "Brian Williams",
-    role: "Social Media Specialist",
+    name: 'Brian Williams',
+    role: 'Social Media Specialist',
     description:
-      "4+ years of experience in social media marketing. Proficient in creating and scheduling content, analyzing metrics, and building engagement",
-    image: base + "team/brian-williams.png",
+      '4+ years of experience in social media marketing. Proficient in creating and scheduling content, analyzing metrics, and building engagement',
+    image: base + 'team/brian-williams.png',
   },
   {
-    name: "Sarah Kim",
-    role: "Content Creator",
+    name: 'Sarah Kim',
+    role: 'Content Creator',
     description:
-      "2+ years of experience in writing and editing. Skilled in creating compelling, SEO-optimized content for various industries",
-    image: base + "team/sarah-kim.png",
+      '2+ years of experience in writing and editing. Skilled in creating compelling, SEO-optimized content for various industries',
+    image: base + 'team/sarah-kim.png',
   },
 ];
 </script>

@@ -1,46 +1,46 @@
 <script setup lang="ts">
-import BaseSection from "@/components/layout/BaseSection.vue";
-import BaseAccordion from "@/components/base/BaseAccordion.vue";
-import type { Step } from "@/types/index";
+import BaseSection from '@/components/layout/BaseSection.vue';
+import BaseAccordion from '@/components/base/BaseAccordion.vue';
+import type { Step } from '@/types/index';
 
 const base = import.meta.env.BASE_URL;
 
 const steps: Step[] = [
   {
-    number: "01",
-    title: "Consultation",
+    number: '01',
+    title: 'Consultation',
     description:
-      "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+      'During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.',
   },
   {
-    number: "02",
-    title: "Research and Strategy Development",
+    number: '02',
+    title: 'Research and Strategy Development',
     description:
-      "We conduct in-depth research to understand your industry, competitors, and target audience. Based on our findings, we develop a customized strategy aligned with your specific goals and budget.",
+      'We conduct in-depth research to understand your industry, competitors, and target audience. Based on our findings, we develop a customized strategy aligned with your specific goals and budget.',
   },
   {
-    number: "03",
-    title: "Implementation",
+    number: '03',
+    title: 'Implementation',
     description:
-      "Our team puts the agreed-upon strategy into action using the latest tools and best practices. We ensure every aspect of the campaign is executed to the highest standard for maximum impact.",
+      'Our team puts the agreed-upon strategy into action using the latest tools and best practices. We ensure every aspect of the campaign is executed to the highest standard for maximum impact.',
   },
   {
-    number: "04",
-    title: "Monitoring and Optimization",
+    number: '04',
+    title: 'Monitoring and Optimization',
     description:
-      "We continuously track campaign performance and make data-driven adjustments to optimize results. Regular analysis ensures your marketing efforts are always delivering at their best.",
+      'We continuously track campaign performance and make data-driven adjustments to optimize results. Regular analysis ensures your marketing efforts are always delivering at their best.',
   },
   {
-    number: "05",
-    title: "Reporting and Communication",
+    number: '05',
+    title: 'Reporting and Communication',
     description:
-      "We provide detailed reports covering key metrics, insights, and recommendations. Regular communication keeps you fully informed and involved at every stage of the process.",
+      'We provide detailed reports covering key metrics, insights, and recommendations. Regular communication keeps you fully informed and involved at every stage of the process.',
   },
   {
-    number: "06",
-    title: "Continual Improvement",
+    number: '06',
+    title: 'Continual Improvement',
     description:
-      "Our commitment to excellence drives us to constantly refine and enhance your marketing strategy. We stay ahead of industry trends to keep your campaigns effective and competitive.",
+      'Our commitment to excellence drives us to constantly refine and enhance your marketing strategy. We stay ahead of industry trends to keep your campaigns effective and competitive.',
   },
 ];
 </script>
@@ -65,13 +65,7 @@ const steps: Step[] = [
             width="25.08"
             height="4.5"
           />
-          <img
-            v-else
-            :src="base + 'icons/icon-plus.svg'"
-            alt=""
-            width="25.08"
-            height="25.08"
-          />
+          <img v-else :src="base + 'icons/icon-plus.svg'" alt="" width="25.08" height="25.08" />
         </span>
       </template>
       <template #body="{ item }">
@@ -138,7 +132,9 @@ const steps: Step[] = [
     align-items: center;
     justify-content: center;
     margin-bottom: 0;
-    transition: margin-bottom 0.3s ease, background-color 0.3s ease;
+    transition:
+      margin-bottom 0.3s ease,
+      background-color 0.3s ease;
   }
 
   &__body {

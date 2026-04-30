@@ -1,46 +1,46 @@
 <script setup lang="ts">
-import ServiceCard from "@/components/ui/cards/ServiceCard.vue";
-import CtaBanner from "@/components/ui/CtaBanner.vue";
-import type { Service } from "@/types/index";
+import ServiceCard from '@/components/ui/cards/ServiceCard.vue';
+import CtaBanner from '@/components/ui/CtaBanner.vue';
+import type { Service } from '@/types/index';
 
 const base = import.meta.env.BASE_URL;
 
 const services: Service[] = [
   {
-    title: "Search engine optimization",
-    slug: "seo",
-    image: base + "services/image-service-seo.png",
-    variant: "light",
+    title: 'Search engine optimization',
+    slug: 'seo',
+    image: base + 'services/image-service-seo.png',
+    variant: 'light',
   },
   {
-    title: "Pay-per-click advertising",
-    slug: "ppc",
-    image: base + "services/image-service-ppc.png",
-    variant: "accent",
+    title: 'Pay-per-click advertising',
+    slug: 'ppc',
+    image: base + 'services/image-service-ppc.png',
+    variant: 'accent',
   },
   {
-    title: "Social Media Marketing",
-    slug: "smm",
-    image: base + "services/image-service-smm.png",
-    variant: "dark",
+    title: 'Social Media Marketing',
+    slug: 'smm',
+    image: base + 'services/image-service-smm.png',
+    variant: 'dark',
   },
   {
-    title: "Email Marketing",
-    slug: "email-marketing",
-    image: base + "services/image-service-email-marketing.png",
-    variant: "light",
+    title: 'Email Marketing',
+    slug: 'email-marketing',
+    image: base + 'services/image-service-email-marketing.png',
+    variant: 'light',
   },
   {
-    title: "Content Creation",
-    slug: "content-creation",
-    image: base + "services/image-service-content-creation.png",
-    variant: "accent",
+    title: 'Content Creation',
+    slug: 'content-creation',
+    image: base + 'services/image-service-content-creation.png',
+    variant: 'accent',
   },
   {
-    title: "Analytics and Tracking",
-    slug: "analytics",
-    image: base + "services/image-service-analytics.png",
-    variant: "dark",
+    title: 'Analytics and Tracking',
+    slug: 'analytics',
+    image: base + 'services/image-service-analytics.png',
+    variant: 'dark',
   },
 ];
 </script>

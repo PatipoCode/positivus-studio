@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import BaseSection from "@/components/layout/BaseSection.vue";
-import TeamGrid from "@/components/ui/TeamGrid.vue";
+import BaseSection from '@/components/layout/BaseSection.vue';
+import TeamGrid from '@/components/ui/TeamGrid.vue';
 </script>
 
 <template>
