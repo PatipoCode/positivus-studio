@@ -1,0 +1,57 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Foundations/Breakpoints" />
+
+# Breakpoints
+
+Screen size variables used in media queries.
+
+## Sizes
+
+<table style={{ width: '100%', marginTop: 24, borderCollapse: 'collapse' }}>
+  <thead>
+    <tr style={{ borderBottom: '2px solid #191A23' }}>
+      <th style={{ textAlign: 'left', padding: 12 }}>Variable</th>
+      <th style={{ textAlign: 'left', padding: 12 }}>Width</th>
+      <th style={{ textAlign: 'left', padding: 12 }}>Target</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style={{ borderBottom: '1px solid #eee' }}>
+      <td style={{ padding: 12 }}><code>$bp-sm</code></td>
+      <td style={{ padding: 12 }}>480px</td>
+      <td style={{ padding: 12 }}>Small phones</td>
+    </tr>
+    <tr style={{ borderBottom: '1px solid #eee' }}>
+      <td style={{ padding: 12 }}><code>$bp-md</code></td>
+      <td style={{ padding: 12 }}>768px</td>
+      <td style={{ padding: 12 }}>Tablets</td>
+    </tr>
+    <tr style={{ borderBottom: '1px solid #eee' }}>
+      <td style={{ padding: 12 }}><code>$bp-lg</code></td>
+      <td style={{ padding: 12 }}>1024px</td>
+      <td style={{ padding: 12 }}>Small laptops</td>
+    </tr>
+    <tr>
+      <td style={{ padding: 12 }}><code>$bp-xl</code></td>
+      <td style={{ padding: 12 }}>1440px</td>
+      <td style={{ padding: 12 }}>Desktops</td>
+    </tr>
+  </tbody>
+</table>
+
+## Usage
+
+```scss
+.element {
+  font-size: 24px;
+
+  @media (max-width: $bp-md) {
+    font-size: 18px;
+  }
+}
+```
+
+## When to use breakpoints
+
+The project mostly uses fluid sizing with `clamp()` because it scales smoothly. Breakpoints are needed only when layout needs to change. For example: switching flex direction from row to column, changing grid columns from 3 to 1.

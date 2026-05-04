@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Welcome" />
+
+# Positivus Studio
+
+Component library for the Positivus digital marketing landing page.
+
+## Tech Stack
+
+- Vue 3 with Composition API and `<script setup>`
+- TypeScript
+- Vite
+- Sass (SCSS)
+- VeeValidate for form validation
+
+## Structure
+
+- **Base** contains atomic components like Button, Input, Modal
+- **Icons** contains SVG icon components
+- **UI** contains composed blocks: cards, banners, search
+- **Foundations** contains design tokens: colors, typography, breakpoints
+
+## How to use this Storybook
+
+Browse components in the sidebar. Use the Controls panel on the right to change props and see how the component reacts. Each component has a Docs tab with auto-generated documentation.
+
+## Conventions
+
+- BEM class naming like `block__element--modifier`
+- TypeScript interfaces in `@/types/index`
+- Fluid typography that grows with screen size
+- Mobile-first responsive design
