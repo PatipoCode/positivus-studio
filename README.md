@@ -1,6 +1,7 @@
 # Positivus Studio
 
 Landing page for a digital marketing agency "Positivus".
+[in progress]
 
 ## Tech Stack
 
