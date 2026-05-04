@@ -1,0 +1,52 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Foundations/Typography" />
+
+# Typography
+
+Font sizes used in the project. All sizes are fluid: they grow smoothly between mobile and desktop using `clamp()`.
+
+Font family: **Space Grotesk** (300 to 700).
+
+## Scale
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: 24, marginTop: 24, fontFamily: '"Space Grotesk", sans-serif' }}>
+  <div>
+    <div style={{ fontSize: 'clamp(36px, 3.5vw, 60px)' }}>$text-5xl. Hero titles</div>
+    <code>clamp(36px, 3.5vw, 60px)</code>
+  </div>
+  <div>
+    <div style={{ fontSize: 'clamp(32px, 3vw, 54px)' }}>$text-4xl. Big numbers</div>
+    <code>clamp(32px, 3vw, 54px)</code>
+  </div>
+  <div>
+    <div style={{ fontSize: 'clamp(28px, 2.5vw, 40px)' }}>$text-3xl. Section titles</div>
+    <code>clamp(28px, 2.5vw, 40px)</code>
+  </div>
+  <div>
+    <div style={{ fontSize: 'clamp(24px, 1.5vw, 24px)' }}>$text-2xl. Subsection titles</div>
+    <code>clamp(24px, 1.5vw, 24px)</code>
+  </div>
+  <div>
+    <div style={{ fontSize: 'clamp(18px, 1.2vw, 20px)' }}>$text-xl. Buttons and links</div>
+    <code>clamp(18px, 1.2vw, 20px)</code>
+  </div>
+  <div>
+    <div style={{ fontSize: 'clamp(16px, 1.1vw, 18px)' }}>$text-lg. Body large</div>
+    <code>clamp(16px, 1.1vw, 18px)</code>
+  </div>
+  <div>
+    <div style={{ fontSize: 'clamp(14px, 1vw, 16px)' }}>$text-base. Body default</div>
+    <code>clamp(14px, 1vw, 16px)</code>
+  </div>
+  <div>
+    <div style={{ fontSize: 'clamp(13px, 0.9vw, 14px)' }}>$text-sm. Small captions</div>
+    <code>clamp(13px, 0.9vw, 14px)</code>
+  </div>
+</div>
+
+## How fluid typography works
+
+`clamp(min, preferred, max)` returns the preferred value (based on viewport width) but never goes below min or above max. This way text size grows naturally with screen width without big jumps at breakpoints.
+
+Try resizing the browser window to see how sizes change.
