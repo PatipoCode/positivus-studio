@@ -3,16 +3,18 @@ withDefaults(
   defineProps<{
     variant?: string;
     type?: 'button' | 'submit' | 'reset';
+    disabled?: boolean;
   }>(),
   {
     variant: 'dark',
     type: 'button',
+    disabled: false,
   },
 );
 </script>
 
 <template>
-  <button :type="type" :class="['button', `button--${variant}`]">
+  <button :type="type" :disabled="disabled" :class="['button', `button--${variant}`]">
     <slot />
   </button>
 </template>
